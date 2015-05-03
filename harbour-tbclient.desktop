@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-tbclient
+Exec=harbour-tbclient
+Name=tieba
+# translation example:
+# your app name in German locale (de)
+Name[de]=tieba
+Name[zh]=百度贴吧

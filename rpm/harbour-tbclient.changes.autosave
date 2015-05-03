@@ -1,0 +1,45 @@
+# Rename this file as harbour-tbclient.changes to include changelog
+# entries in your RPM file.
+#
+# Add new changelog entries following the format below.
+# Add newest entries to the top of the list.
+# Separate entries from eachother with a blank line.
+
+# * date Author's Name <author's email> version-release
+# - Summary of changes
+
+* Sun Jun 03 2015 Chanxi <tianzhiyizu@gmail.com> 0.3-2
+- 优化‘消息界面-回复我的’内容
+
+* Sun Jun 03 2015 Chanxi <tianzhiyizu@gmail.com> 0.3-1
+- 查看大图增加GIF播放功能
+
+* Mon Apr 27 2015 Chanxi <tianzhiyizu@gmail.com> 0.2-6
+- Warning页面提醒文字补齐
+- 复活账户管理界面编辑功能
+- 帖内图片显示比例修正
+- 发帖、回复的发图片功能
+
+* Sun Apr 26 2015 Chanxi <tianzhiyizu@gmail.com> 0.2-5
+- 一些翻译的修正
+- 设置内容调整
+- 客户端显示添加wp（已工作）
+
+* Sat Apr 25 2015 Chanxi <tianzhiyizu@gmail.com> 0.2-4
+- 修改主页（FeedPage）显示
+- 修改广场（SquarePage）显示
+- 一键签到页面对高分屏的适配显示
+
+* Fri Apr 24 2015 Chanxi <tianzhiyizu@gmail.com> 0.2-3
+- 长按菜单优化
+- 查看大图
+- 修正贴吧Header/帖内Header初始显示
+
+* Mon Apr 13 2015 Chanxi <tianzhiyizu@gmail.com> 0.2-2
+- 消息优化
+
+* Fri Apr 10 2015 Chanxi <tianzhiyizu@gmail.com> 0.2-1
+- 基本定性
+
+* Fri Mar 24 2014 Chanxi <tianzhiyizu@gmail.com> 0.1-1
+- 结构重组
