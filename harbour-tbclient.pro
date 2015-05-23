@@ -41,7 +41,7 @@ SOURCES += \
 
 OTHER_FILES += \
     qml/CoverPage.qml \
-    rpm/harbour-tbclient.changes.in \
+    rpm/harbour-tbclient.changes\
     rpm/harbour-tbclient.spec \
     rpm/harbour-tbclient.yaml \
     translations/*.ts \
@@ -94,6 +94,7 @@ OTHER_FILES += \
     qml/tbclient/Dialog/EmoticonSelector.qml \
     qml/tbclient/Dialog/EnterThreadDialog.qml \
     qml/tbclient/Dialog/GoodListDialog.qml \
+    qml/tbclient/Dialog/GalleryDialog.qml \
     qml/tbclient/Dialog/NewVCodeDialog.qml \
     qml/tbclient/Dialog/PageJumper.qml \
     qml/tbclient/Dialog/RemindSettingDialog.qml \
@@ -108,7 +109,6 @@ OTHER_FILES += \
     qml/tbclient/Explore/SquarePage.qml \
     qml/tbclient/Floor/FloorDelegate.qml \
     qml/tbclient/Floor/FloorHeader.qml \
-    qml/tbclient/Floor/FloorMenu.qml \
     qml/tbclient/Floor/FloorPage.qml \
     qml/tbclient/Floor/ToolsArea.qml \
     qml/tbclient/Forum/ForumDelegate.qml \
@@ -156,15 +156,15 @@ OTHER_FILES += \
     qml/tbclient/Thread/TabPanel.qml \
     qml/tbclient/Thread/TabGroup.qml \
     qml/tbclient/Component/BerthMenu.qml \
-    qml/tbclient/Component/HeaderBtn.qml \
-    qml/tbclient/Component/MainBtnMenu.qml \
     qml/tbclient/Component/TabView.qml \
     qml/tbclient/Component/EnterThreadMenu.qml \
-    qml/tbclient/Component/EnterThreadSearchMenu.qml
+    qml/tbclient/Component/EnterThreadSearchMenu.qml \
+    qml/tbclient/Component/HorizontalIconTextButton.qml \
+    qml/tbclient/Component/TabButton.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
 CONFIG += sailfishapp_i18n
-TRANSLATIONS += translations/harbour-tbclient-de.ts \
-                 translations/harbour-tbclient-zh_CN.ts
+TRANSLATIONS += translations/harbour-tbclient-de.ts
+TRANSLATIONS += translations/harbour-tbclient-zh.ts
 

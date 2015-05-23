@@ -115,11 +115,11 @@ MyPage {
         Column {
             id: contentCol;
             anchors { left: parent.left; right: parent.right; }
-            PullToActivate {
-                myView: view;
-                enabled: !loading;
-                onRefresh: internal.getlist("prev");
-            }
+//            PullToActivate {
+//                myView: view;
+//                enabled: !loading;
+//                onRefresh: internal.getlist("prev");
+//            }
             Row {
                 anchors { left: parent.left; right: parent.right; }
                 Column {

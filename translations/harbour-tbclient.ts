@@ -132,10 +132,6 @@
         <source>Talking with %1</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>View history message</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>CommitDialog</name>
@@ -353,19 +349,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Forum manage</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Jump to page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Create a thread</source>
+        <source>History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>History</source>
+        <source>refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New post</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -424,6 +420,10 @@
     </message>
     <message>
         <source>Error loading image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image saved to %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -617,6 +617,25 @@
     <name>MyPage</name>
     <message>
         <source>Loading</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NavigationPanel</name>
+    <message>
+        <source>Boutique</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View photos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jump to page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>History</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -822,10 +841,6 @@
 </context>
 <context>
     <name>RemindSettingDialog</name>
-    <message>
-        <source>Remind settings</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Disabled</source>
         <translation type="unfinished"></translation>
@@ -1208,6 +1223,30 @@
     </message>
     <message>
         <source>New tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reverse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jump to page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New post</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>refresh</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

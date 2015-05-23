@@ -45,10 +45,12 @@ Item {
         Rectangle {
             anchors { left: parent.left; right: parent.right; bottom: parent.bottom; }
             height: Math.min(parent.height/2, constant.graphicSizeSmall);
-            color: "#C0000000";
+            color: "#a0000000";
             Text {
                 anchors { left: parent.left; right: parent.right; }
                 anchors.verticalCenter: parent.verticalCenter;
+                maximumLineCount: 1
+                width: page.width/2
                 font.pixelSize: constant.fontXXSmall;
                 text: title;
                 color: "white";

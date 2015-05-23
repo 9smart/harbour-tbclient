@@ -10,13 +10,9 @@ CoverBackground {
         anchors.fill: parent;
         source: "image://theme/graphic-cover-message"
     }
-    Image {
-        anchors{
-            bottom: bgcol.top;
-            bottomMargin: constant.fontSmall;
-            horizontalCenter: parent.horizontalCenter;
-        }
-        source: "gfx/harbour-tbclient.png"
+    CoverPlaceholder {
+        text: ""
+        icon.source: "gfx/harbour-tbclient.png"
     }
     Column{
         id:bgcol
@@ -41,7 +37,7 @@ CoverBackground {
     CoverActionList {
         id: coverAction
         CoverAction {
-            iconSource: "gfx/icon_message.png";
+            iconSource: "image://theme/icon-cover-alarm"
             onTriggered: {
                 app.activate();
                 console.log(pageStack[pageStack.depth])
@@ -50,7 +46,7 @@ CoverBackground {
         }
 
         CoverAction {
-            iconSource: "gfx/btn_refresh.png";
+            iconSource: "image://theme/icon-cover-refresh"
             onTriggered:{
                 //imsgAt.text=1;
             }

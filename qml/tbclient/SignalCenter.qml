@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import Sailfish.Silica 1.0
 import "../js/LinkDecoder.js" as LinkDecoder
 
 QtObject {
@@ -76,14 +77,11 @@ QtObject {
         if (!enterDialogComp){ enterDialogComp = Qt.createComponent("Dialog/EnterThreadDialog.qml"); }
         var prop = { title: title, isfloor: isfloor, pid: pid, tid: tid, fname: fname };
         if (fromSearch) prop.fromSearch = true;
-        //enterDialogComp.createObject(pageStack.currentPage, prop);
         pageStack.push("Dialog/EnterThreadDialog.qml",prop);
     }
 
     function copyToClipboard(text){
-        if (!copyDialogComp){ copyDialogComp = Qt.createComponent("Dialog/CopyDialog.qml"); }
-        var prop = { text: text };
-        copyDialogComp.createObject(pageStack.currentPage, prop);
+        Clipboard.text=text;
     }
 
     function commitPrison(prop){

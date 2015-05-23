@@ -180,27 +180,6 @@ MyPage {
         }
     }
 
-//    Component {
-//        id: menuComp;
-//        Menu {
-//            id: menu;
-//            MenuLayout {
-//                MenuItem {
-//                    text: qsTr("Add to bookmark");
-//                    onClicked: internal.addStore();
-//                }
-//                MenuItem {
-//                    text: qsTr("Jump to page");
-//                    onClicked: internal.jumpToPage();
-//                }
-//                MenuItem {
-//                    text: qsTr("View original thread");
-//                    onClicked: signalCenter.enterThread({threadId: internal.thread.id});
-//                }
-//            }
-//        }
-//    }
-
     PageHeader {
         id: viewHeader;
         title: internal.post ? qsTr("Floor %1").arg(internal.post.floor)

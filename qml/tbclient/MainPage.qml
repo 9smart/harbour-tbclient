@@ -175,7 +175,7 @@ MyPage {
             pressDelay: 120;
             cacheBuffer: 2000;
             cellWidth: width / 2;
-            cellHeight: constant.fontMedium*2;
+            cellHeight: constant.fontLarge*2;
 
             //header: headerComp;
             delegate: forumDelegate;
@@ -226,14 +226,14 @@ MyPage {
                 Item {
                     id: root;
                     width: view.cellWidth;
-                    height: (constant.fontXSmall)*2;
+                    height: constant.fontMedium*2;
                     Rectangle {
                         color: "#00ffffff";
                         anchors {
                             left: parent.left; leftMargin: 5;
                         }
                         width: view.cellWidth-10;
-                        height: constant.fontSmall*2;
+                        height: constant.fontMedium*2;
                         radius:5;
                         border.width: 1;
                         border.color: "#428883";
@@ -259,7 +259,6 @@ MyPage {
                             }
                             Image {
                                 anchors.verticalCenter: parent.verticalCenter;
-                                //source: "gfx/icon_jinba_sign"+constant.invertedString;
                                 source: "gfx/icon_sign_ok.png";
                                 visible: is_sign;
                                 width: root.width/8
@@ -293,38 +292,40 @@ MyPage {
             }
 
             width: parent.width;
-            height:Screen.width/6;
-            HeaderBtn{
+            height:Theme.iconSizeMedium + 2 * Theme.paddingMedium;
+            IconButton{
                 id: icn1;
-                width: parent.height*1.2;
+                width: parent.height;
                 height: parent.height;
                 anchors.right: parent.right;
-                url: "gfx/icon_search.png";
-                onTouched: pageStack.push(Qt.resolvedUrl("SearchPage.qml"), undefined, true);
+                anchors.rightMargin: Theme.paddingMedium;
+                icon.source: "image://theme/icon-m-search";
+                onClicked: pageStack.push(Qt.resolvedUrl("SearchPage.qml"), undefined, true);
             }
-            HeaderBtn{
+            IconButton{
                 id: icn2;
-                width: parent.height*1.2;
+                width: parent.height;
                 height: parent.height;
                 anchors.right: icn1.left;
-                url: "gfx/icon_message.png";
-                onTouched: pageStack.push(Qt.resolvedUrl("Message/MessagePage.qml"));
+                anchors.rightMargin: Theme.paddingMedium;
+                icon.source: "image://theme/icon-m-alarm";
+                onClicked: pageStack.push(Qt.resolvedUrl("Message/MessagePage.qml"));
             }
-//            HeaderBtn{
+//            IconButton{
 //                id: icn3;
 //                width: parent.height*1.2;
 //                height: parent.height;
 //                anchors.right: icn2.left;
-//                url: "gfx/icon_contact.png";
-//                onTouched: pageStack.push(Qt.resolvedUrl("ProfilePage.qml"), { uid: tbsettings.currentUid });
+//                icon.source: "image://theme/icon-m-message";
+//                onClicked: pageStack.push(Qt.resolvedUrl("ProfilePage.qml"), { uid: tbsettings.currentUid });
 //            }
-//            HeaderBtn{
+//            IconButton{
 //                id: icn4;
 //                width: parent.height*1.2;
 //                height: parent.height;
 //                anchors.right: icn3.left;
-//                url: "gfx/icon_sign.png";
-//                onTouched: pageStack.push(Qt.resolvedUrl("BatchSignPage.qml"));
+//                icon.source: "gfx/icon_sign.png";
+//                onClicked: pageStack.push(Qt.resolvedUrl("BatchSignPage.qml"));
 //            }
         }
         VerticalScrollDecorator {

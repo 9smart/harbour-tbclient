@@ -141,7 +141,7 @@ MyPage {
                             id: removeButtonComp;
                             IconButton {
                                 //platformStyle: ButtonStyle { buttonWidth: buttonHeight; }
-                                icon.source: "gfx/icon_del.png";
+                                icon.source: "image://theme/icon-m-delete";
                                 onClicked: internal.removeAccount(index);
                             }
                         }

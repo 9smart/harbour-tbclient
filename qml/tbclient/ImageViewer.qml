@@ -196,4 +196,23 @@ MyPage {
     }
 
     VerticalScrollDecorator { flickable: imageFlickable }
+    IconButton {
+        anchors{
+            right: page.right;
+            rightMargin: Theme.paddingLarge;
+            bottom: page.bottom;
+            bottomMargin: Theme.paddingLarge;
+        }
+        width: Theme.iconSizeMedium+Theme.paddingMedium*2
+
+        icon.source: "image://theme/icon-m-cloud-download"
+        onClicked: {
+            var path = tbsettings.imagePath + "/save/tbclient/" + imageUrl.toString().split("/").pop();
+            if (utility.saveCache(imageUrl, path)){
+                signalCenter.showMessage(qsTr("Image saved to %1").arg(path));
+            } else {
+                utility.openURLDefault(imageUrl);
+            }
+        }
+    }
 }

@@ -72,7 +72,7 @@ Item {
                             verticalCenter: parent.top;
                             horizontalCenter: parent.right;
                         }
-                        icon.source: "../gfx/icon_del_small.png"
+                        icon.source: "image://theme/icon-m-clear"
                         onClicked: internal.removeImage(modelData);
                     }
                 }

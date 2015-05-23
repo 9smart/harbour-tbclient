@@ -82,7 +82,7 @@ QString Utility::imei() const
     QtMobility::QSystemDeviceInfo devInfo;
     QString mImei = devInfo.imei();
     mImei = mImei.replace("-", "");
-
+    qDebug() << mImei;
     return mImei;
 #endif
 

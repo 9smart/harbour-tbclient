@@ -120,11 +120,11 @@ MyPage {
         model: ListModel {}
         cacheBuffer: view.height * 5;
         delegate: chatDelegate;
-        header: PullToActivate {
-            myView: view;
-            pullDownMessage: qsTr("View history message");
-            onRefresh: internal.getlist("prev");
-        }
+//        header: PullToActivate {
+//            myView: view;
+//            pullDownMessage: qsTr("View history message");
+//            onRefresh: internal.getlist("prev");
+//        }
         Component {
             id: chatDelegate;
             Item {

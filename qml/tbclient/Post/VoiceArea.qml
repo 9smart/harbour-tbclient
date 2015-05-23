@@ -27,7 +27,7 @@ Item {
         id: deleteBtn;
         visible: false;
         anchors { left: icon.right; bottom: icon.bottom; bottomMargin: -constant.paddingMedium; }
-        icon.source: "image://theme/icon-m-toolbar-delete"//+(theme.inverted?"-white":"");
+        icon.source: "image://theme/icon-m-delete"//"image://theme/icon-m-toolbar-delete"//+(theme.inverted?"-white":"");
         //platformStyle: ButtonStyle { buttonWidth: buttonHeight; }
         onClicked: {
             audioWrapper.stop();

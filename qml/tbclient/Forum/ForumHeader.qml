@@ -132,22 +132,6 @@ Item {
                     text: qsTr("Signed %1 days").arg(internal.signDays);
                 }
             }
-            Image {
-                width: signInfoText.paintedWidth + 20;
-                height: 46;
-                visible: false//internal.hasSigned;
-                anchors.bottom: parent.bottom;
-                //anchors.verticalCenter: parent.verticalCenter;
-                source: "../gfx/ico_sign"+constant.invertedString;
-                smooth: true;
-                Text {
-                    //id: signInfoText;
-                    anchors.centerIn: parent;
-                    font.pixelSize: constant.fontXXSmall;
-                    color: "red";
-                    text: qsTr("Signed %1 days").arg(internal.signDays);
-                }
-            }
         }
     }
     Rectangle {

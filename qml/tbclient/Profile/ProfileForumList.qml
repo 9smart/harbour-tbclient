@@ -131,7 +131,7 @@ MyPage {
                         Component {
                             id: editBtn;
                             IconButton {
-                                icon.source: "image://theme/icon-m-toolbar-delete"+(theme.inverted?"-white":"");
+                                icon.source: "image://theme/icon-m-delete";
                                 onClicked: removeForum(index);
                             }
                         }

@@ -6,28 +6,6 @@ MyPage {
     id: page;
 
     title: internal.getTitle();
-    /*tools: ToolBarLayout {
-        BackButton {}
-        ToolIcon {
-            visible: currentTab != null;
-            platformIconId: "toolbar-refresh";
-            onClicked: currentTab.getlist();
-        }
-        ToolIcon {
-            id: editBtn;
-            visible: currentTab != null;
-            enabled: visible && currentTab.thread != null;
-            platformIconId: "toolbar-edit";
-            onClicked: {
-                var prop = { isReply: true, caller: currentTab }
-                pageStack.push(Qt.resolvedUrl("../Post/PostPage.qml"), prop);
-            }
-        }
-        ToolIcon {
-            platformIconId: "toolbar-view-menu";
-            onClicked: internal.openMenu();
-        }
-    }*/
 
     property alias currentTab: tabGroup.currentTab;
 
@@ -222,6 +200,9 @@ MyPage {
         onCurrentTabChanged: {
             if (currentTab) currentTab.focus();
         }
+        Component.onCompleted: {
+            console.log("over")
+        }
     }
 
     Component {
@@ -394,65 +375,6 @@ MyPage {
             audioWrapper.stop();
         }
     }
-    MainBtnMenu{
-        mItemX: 2;
-        mItemObjX: [{
-                "btnName":"",
-                "btnPic":"gfx/btn_refresh.png",
-                "btnWidth":Screen.width*0.22,
-            },{
-                "btnName":"",
-                "btnPic":"gfx/btn_edit.png",
-                "btnWidth":Screen.width*0.22,
-            }
-        ];
-        onBtnFunX: {
-            switch(index){
-                case 0://刷新
-                    currentTab.getlist();
-                    break;
-                case 1://回帖
-                    var prop = { isReply: true, caller: currentTab }
-                    pageStack.push(Qt.resolvedUrl("../Post/PostPage.qml"), prop);
-                    break;
-                default:
-                    break;
-            }
-        }
 
-        mItemY: 4;
-        mItemObjY: [{
-                "btnName":qsTr("Author only"),
-            },{
-                "btnName":qsTr("Reverse"),
-            },{
-                "btnName":qsTr("Jump to page"),
-            },{
-                "btnName":qsTr("Open browser"),
-            },
-        ];
-        onBtnFunY: {
-            switch(index){
-                case 0://Author only-只看楼主
-                    currentTab.isReverse = false;
-                    currentTab.isLz = !currentTab.isLz;
-                    currentTab.getlist();
-                    break;
-                case 1://Reverse-倒叙查看
-                    currentTab.isLz = false;
-                    currentTab.isReverse = !currentTab.isReverse;
-                    currentTab.getlist();
-                    break;
-                case 2://Jump to page-跳转
-                    internal.jumpToPage();
-                    break;
-                case 3://Open browser-用浏览器打开本帖
-                    signalCenter.openBrowser("http://tieba.baidu.com/p/"+currentTab.threadId);
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
 }
 

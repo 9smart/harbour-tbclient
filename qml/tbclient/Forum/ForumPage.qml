@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.1
 import Sailfish.Silica 1.0
 import "../Component"
 import "../../js/main.js" as Script
@@ -7,27 +7,12 @@ MyPage {
     id: page;
 
     property string name;
+    property alias contentItem:view
+    property bool withPanelView: true
     onNameChanged: internal.getlist();
 
     objectName: "ForumPage";
-
     title: internal.getName()
-
-    /*tools: ToolBarLayout {
-        BackButton {}
-        ToolIcon {
-            platformIconId: "toolbar-refresh";
-            onClicked: internal.getlist();
-        }
-        ToolIcon {
-            platformIconId: "toolbar-pages-all"
-            onClicked: signalCenter.enterThread();
-        }
-        ToolIcon {
-            platformIconId: "toolbar-view-menu";
-            onClicked: internal.openMenu();
-        }
-    }*/
 
     QtObject {
         id: internal;
@@ -54,12 +39,6 @@ MyPage {
         property variant menu: null;
         property variant jumper: null;
         property variant goodSelector: null;
-
-        function openMenu(){
-//            if (!menu)
-//                menu = menuComp.createObject(page);
-//            menu.open();
-        }
 
         function selectGood(){
             if (!goodSelector){
@@ -176,60 +155,6 @@ MyPage {
         }
     }
 
-
-//    Component {
-//        id: menuComp;
-//        PullDownMenu {
-//            id: menu;
-//            property bool menuEnabled: internal.forum.hasOwnProperty("name");
-//            MenuItem {
-//                text: qsTr("Boutique");
-//                enabled: menu.menuEnabled;
-//                property bool privateSelectionIndicator: enabled && internal.isGood;
-//                Rectangle {
-//                    anchors.fill: parent;
-//                    color: "black";
-//                    opacity: parent.privateSelectionIndicator ? 0.3 : 0;
-//                }
-//                onClicked: {
-//                    internal.isGood = !internal.isGood;
-//                }
-//            }
-//            MenuItem {
-//                text: qsTr("View photos");
-//                enabled: menu.menuEnabled;
-//                onClicked: pageStack.replace(Qt.resolvedUrl("ForumPicture.qml"),
-//                                             {name: internal.getName()});
-//            }
-//            MenuItem {
-//                text: qsTr("Forum manage");
-//                visible: internal.user.is_manager === "1"
-//                onClicked: {
-//                    var url = "http://tieba.baidu.com/mo/q/bawuindex";
-//                    url+="?fn="+internal.forum.name;
-//                    url+="&fid="+internal.forum.id;
-//                    url+="&cuid="+Qt.md5(utility.imei).toUpperCase()+"|"+utility.imei;
-//                    url+="&timestamp="+Date.now();
-//                    url+="&_client_version=5.5.2";
-//                    signalCenter.openBrowser(url);
-//                }
-//            }
-//            MenuItem {
-//                text: qsTr("Jump to page");
-//                enabled: menu.menuEnabled;
-//                onClicked: internal.jumpToPage();
-//            }
-//            MenuItem {
-//                text: qsTr("Create a thread");
-//                enabled: menu.menuEnabled;
-//                onClicked: {
-//                    var prop = { caller: internal };
-//                    pageStack.push(Qt.resolvedUrl("../Post/PostPage.qml"), prop);
-//                }
-//            }
-//        }
-//    }
-
     Component {
         id: goodSelectorComp;
         /*SelectionDialog {
@@ -264,7 +189,7 @@ MyPage {
         }
     }
 
-    /*PageHeader {
+    PageHeader {
         id: viewHeader;
         title: {
             if (internal.isGood){
@@ -275,168 +200,198 @@ MyPage {
                 }
                 return qsTr("Boutique");
             } else {
-                return page.title;
+                return "" // page.title;
             }
         }
-        //onClicked: view.scrollToTop();
-        IconButton {
-            anchors {
-                right: parent.right; rightMargin: constant.paddingMedium;
-                verticalCenter: parent.verticalCenter;
-            }
-            icon.source: "image://theme/icon-m-common-filter";
-            visible: internal.isGood && internal.forum.good_classify.length > 0;
-            onClicked: internal.selectGood();
+//        IconButton {
+//            anchors {
+//                right: parent.right; rightMargin: constant.paddingMedium;
+//                verticalCenter: parent.verticalCenter;
+//            }
+//            icon.source: "image://theme/icon-m-common-filter";
+//            visible: internal.isGood && internal.forum.good_classify.length > 0;
+//            onClicked: internal.selectGood();
+//        }
+    }
+
+    ListView {
+        property int flpy0: 0
+        id: view;
+        anchors {
+            fill: parent;
+            //topMargin: 100
         }
-    }*/
-    SilicaFlickable{
-        id:fic
-        anchors.fill: parent;
-        //topMargin:100
-        Component.onCompleted: {
-             console.log(fic.contentY)
-            fic.contentY= -100;
-            fic.scrollToTop();
-            console.log(fic.contentY)
+        cacheBuffer: 7200;
+        pressDelay: 150;
+        boundsBehavior:Flickable.StopAtBounds
+
+        onMovementStarted:{
+            flpy0=view.contentY;
+            toolbar.hideExbar();
         }
-        PullDownMenu {
-            id: menu;
-            property bool menuEnabled: internal.forum.hasOwnProperty("name");
-            MenuItem {
-                text: qsTr("Boutique");
-                enabled: menu.menuEnabled;
-                property bool privateSelectionIndicator: enabled && internal.isGood;
-                Rectangle {
-                    anchors.fill: parent;
-                    color: "black";
-                    opacity: parent.privateSelectionIndicator ? 0.3 : 0;
-                }
-                onClicked: {
-                    internal.isGood = !internal.isGood;
-                }
-            }
-            MenuItem {
-                text: qsTr("View photos");
-                enabled: menu.menuEnabled;
-                onClicked: pageStack.replace(Qt.resolvedUrl("ForumPicture.qml"),
-                                             {name: internal.getName()});
-            }
-            MenuItem {
-                text: qsTr("Forum manage");
-                visible: internal.user.is_manager === "1"
-                onClicked: {
-                    var url = "http://tieba.baidu.com/mo/q/bawuindex";
-                    url+="?fn="+internal.forum.name;
-                    url+="&fid="+internal.forum.id;
-                    url+="&cuid="+Qt.md5(utility.imei).toUpperCase()+"|"+utility.imei;
-                    url+="&timestamp="+Date.now();
-                    url+="&_client_version=5.5.2";
-                    signalCenter.openBrowser(url);
-                }
-            }
-            MenuItem {
-                text: qsTr("Jump to page");
-                enabled: menu.menuEnabled;
-                onClicked: internal.jumpToPage();
-            }
-            MenuItem {
-                text: qsTr("Create a thread");
-                enabled: menu.menuEnabled;
-                onClicked: {
-                    var prop = { caller: internal };
-                    pageStack.push(Qt.resolvedUrl("../Post/PostPage.qml"), prop);
-                }
+        onContentYChanged:{
+            if(contentY-flpy0<0){
+                toolbar.visible=true
+                toolbar.height=toolbar.iheight;
+            }else{
+                toolbar.height=0;
             }
         }
-        SilicaListView {
-            id: view;
-            anchors {
-                fill: parent;
-                //topMargin: 100
-            }
-            cacheBuffer: 7200;
-            pressDelay: 150;
-            model: ListModel {}
-            header: ForumHeader {
-                /*PullToActivate {
-                    myView: view;
-                    enabled: !loading;
-                    onRefresh: {
-                        internal.getlist("prev");
+
+        model: ListModel {}
+        header: ForumHeader {
+            visible: internal.forum && internal.forum.hasOwnProperty("name");
+            onSignButtonClicked: internal.sign();
+            onLikeButtonClicked: internal.like();
+            height: constant.paddingLarge*3+constant.fontSmall+constant.fontXXSmall+Theme.itemSizeSmall;
+        }
+        delegate: ForumDelegate {
+        }
+        footer: FooterItem {
+            enabled: !loading;
+            visible: internal.hasMore || internal.cursor < internal.threadIdList.length-1;
+            onClicked: internal.getlist("next");
+        }
+    }
+    Item{
+        id:toolbar
+        clip: true;
+        function hideExbar(){
+            toolbar.showExbar=false;
+            toolbar.height=toolbar.iheight;
+            mebubtn.visible=true;
+            mebubtn_down.visible=false;
+        }
+
+        anchors{
+            bottom: page.bottom
+        }
+        height: 0;
+        property int iheight: showExbar ? iconbar.height+exbar.height : iconbar.height;
+        property bool showExbar: false
+        width: page.width;
+
+        Rectangle{
+            id:exbar
+            anchors.bottom: iconbar.top;
+            color: "#08202c"
+            height: (Theme.iconSizeMedium+Theme.paddingMedium*2)*4+4;
+            width: page.width;
+            Column{
+                width: page.width;
+                height: parent.height;
+                TabButton{//Boutique-精品
+                    icon.source: internal.isGood ? "image://theme/icon-m-favorite-selected":"image://theme/icon-m-favorite"
+                    text:qsTr("Boutique")
+                    onClicked: {
+                        internal.isGood = !internal.isGood;
+                        toolbar.hideExbar();
                     }
-                }*/
-                visible: internal.forum && internal.forum.hasOwnProperty("name");
-                onSignButtonClicked: internal.sign();
-                onLikeButtonClicked: internal.like();
-                height: constant.paddingLarge*3+constant.fontSmall+constant.fontXXSmall+Theme.itemSizeSmall;
-            }
-            delegate: ForumDelegate {
-            }
-            footer: FooterItem {
-                enabled: !loading;
-                visible: internal.hasMore || internal.cursor < internal.threadIdList.length-1;
-                onClicked: internal.getlist("next");
+                }
+                Rectangle{
+                    width: parent.width;
+                    height: 1;
+                    color: Theme.rgba(Theme.highlightColor, 0.2)
+                }
+                TabButton{//View photos-相册
+                    icon.source: "image://theme/icon-m-image";
+                    text:qsTr("View photos");
+                    onClicked: {
+                        pageStack.replace(Qt.resolvedUrl("ForumPicture.qml"),{name: internal.getName()});
+                        toolbar.hideExbar();
+                    }
+                }
+                Rectangle{
+                    width: parent.width;
+                    height: 1;
+                    color: Theme.rgba(Theme.highlightColor, 0.2)
+                }
+                TabButton{//Jump to page-跳转
+                    icon.source: "image://theme/icon-m-rotate-right";
+                    text:qsTr("Jump to page");
+                    onClicked: {
+                        internal.jumpToPage();
+                        toolbar.hideExbar();
+                    }
+                }
+                Rectangle{
+                    width: parent.width;
+                    height: 1;
+                    color: Theme.rgba(Theme.highlightColor, 0.2)
+                }
+                TabButton{//History-历史
+                    icon.source: "image://theme/icon-m-edit"
+                    text:qsTr("History");
+                    onClicked: {
+                        signalCenter.enterThread();
+                        toolbar.hideExbar();
+                    }
+                }
+                Rectangle{
+                    width: parent.width;
+                    height: 1;
+                    color: Theme.rgba(Theme.highlightColor, 0.2)
+                }
             }
         }
-        VerticalScrollDecorator {
-            flickable: view;
+
+        Rectangle{
+            id:iconbar
+            anchors.bottom: parent.bottom
+            color: "#08202c"
+            height: Theme.iconSizeMedium+Theme.paddingMedium*2;
+            width: page.width;
+            Row{
+                TabButton{
+                    icon.source: "image://theme/icon-m-edit"
+                    width: (page.width-Theme.iconSizeMedium-Theme.paddingMedium*2)/2
+                    text:qsTr("New post");
+                    onClicked: {
+                        var prop = { caller: internal };
+                        pageStack.push(Qt.resolvedUrl("../Post/PostPage.qml"), prop);
+                        toolbar.hideExbar();
+                    }
+                }
+                TabButton{
+                    icon.source: "image://theme/icon-m-refresh"
+                    width: (page.width-Theme.iconSizeMedium-Theme.paddingMedium*2)/2
+                    text:qsTr("refresh");
+                    onClicked: {
+                        internal.getlist();
+                        toolbar.hideExbar();
+                    }
+                }
+                IconButton{
+                    id:mebubtn
+                    width: Theme.iconSizeMedium+Theme.paddingMedium*2
+                    icon.source: "image://theme/icon-m-menu"
+                    onClicked: {
+                        toolbar.showExbar=true;
+                        toolbar.height=toolbar.iheight;
+                        mebubtn.visible=false;
+                        mebubtn_down.visible=true;
+                    }
+                }
+                IconButton{
+                    id:mebubtn_down
+                    width: Theme.iconSizeMedium+Theme.paddingMedium*2
+                    icon.source: "image://theme/icon-m-down"
+                    onClicked: {
+                        toolbar.showExbar=false;
+                        toolbar.height=toolbar.iheight;
+                        mebubtn.visible=true;
+                        mebubtn_down.visible=false;
+                    }
+                }
+            }
+        }
+        Behavior on height {NumberAnimation{duration: 150}}
+        Connections {
+            target: pageStack
+            onCurrentPageChanged: {
+                toolbar.hideExbar();
+            }
         }
     }
 
-    MainBtnMenu{
-        mItemX: 2;
-        mItemObjX: [{
-                "btnName":"",
-                "btnPic":"gfx/btn_refresh.png",
-                "btnWidth":Screen.width*0.22,
-            },{
-                "btnName":"",
-                "btnPic":"gfx/btn_edit.png",
-                "btnWidth":Screen.width*0.22,
-            }
-        ];
-        onBtnFunX: {
-            switch(index){
-                case 0://编辑
-                    internal.getlist();
-                    break;
-                case 1://发帖
-                    var prop = { caller: internal };
-                    pageStack.push(Qt.resolvedUrl("../Post/PostPage.qml"), prop);
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        mItemY: 4;
-        mItemObjY: [{
-                "btnName":qsTr("Boutique"),
-            },{
-                "btnName":qsTr("View photos"),
-            },{
-                "btnName":qsTr("Jump to page"),
-            },{
-                "btnName":qsTr("History"),
-            },
-        ];
-        onBtnFunY: {
-            switch(index){
-                case 0://Boutique-精品
-                    internal.isGood = !internal.isGood;
-                    break;
-                case 1://View photos-相册
-                    pageStack.replace(Qt.resolvedUrl("ForumPicture.qml"),{name: internal.getName()});
-                    break;
-                case 2://Jump to page-跳转
-                    internal.jumpToPage();
-                    break;
-                case 3://History-历史
-                    signalCenter.enterThread();;
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
 }

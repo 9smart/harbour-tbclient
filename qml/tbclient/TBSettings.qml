@@ -54,13 +54,13 @@ QtObject {
     }
 
     // design
-    property bool whiteTheme: utility.getValue("whiteTheme", true);
+    property bool whiteTheme: utility.getValue("whiteTheme", true) == "true";
     onWhiteThemeChanged: utility.setValue("whiteTheme", whiteTheme);
 
-    property bool showImage: utility.getValue("showImage", true);
+    property bool showImage: utility.getValue("showImage", true) == "true";
     onShowImageChanged: utility.setValue("showImage", showImage);
 
-    property bool showAbstract: utility.getValue("showAbstract", true);
+    property bool showAbstract: utility.getValue("showAbstract", true) == "true";
     onShowAbstractChanged: utility.setValue("showAbstract", showAbstract);
 
     property int maxTabCount: utility.getValue("maxTabCount", 4);
@@ -76,21 +76,21 @@ QtObject {
     property int remindInterval: utility.getValue("remind/interval", 5);
     onRemindIntervalChanged: utility.setValue("remind/interval", remindInterval);
 
-    property bool remindBackground: utility.getValue("remind/background", true);
+    property bool remindBackground: utility.getValue("remind/background", true) == "true";
     onRemindBackgroundChanged: utility.setValue("remind/background", remindBackground);
 
-    property bool remindFans: utility.getValue("remind/fans", true);
+    property bool remindFans: utility.getValue("remind/fans", true) == "true";
     onRemindFansChanged: utility.setValue("remind/fans", remindFans);
 
-    property bool remindPletter: utility.getValue("remind/pletter", true);
+    property bool remindPletter: utility.getValue("remind/pletter", true) == "true";
     onRemindPletterChanged: utility.setValue("remind/pletter", remindPletter);
 
-    property bool remindBookmark: utility.getValue("remind/bookmark", false);
+    property bool remindBookmark: utility.getValue("remind/bookmark", false) == "true";
     onRemindBookmarkChanged: utility.setValue("remind/bookmark", remindBookmark);
 
-    property bool remindReplyme: utility.getValue("remind/replyme", true);
+    property bool remindReplyme: utility.getValue("remind/replyme", true) == "true";
     onRemindReplymeChanged: utility.setValue("remind/replyme", remindReplyme);
 
-    property bool remindAtme: utility.getValue("remind/atme", true);
+    property bool remindAtme: utility.getValue("remind/atme", true) == "true";
     onRemindAtmeChanged: utility.setValue("remind/atme", remindAtme);
 }

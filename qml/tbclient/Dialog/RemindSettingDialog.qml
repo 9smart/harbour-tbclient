@@ -4,12 +4,12 @@ import Sailfish.Silica 1.0
 Dialog {
     id: root;
 
-    Text {
-        font.pixelSize: constant.fontXXLarge;
-        color: constant.colorLight;
-        anchors { left: parent.left; leftMargin: constant.paddingXLarge; verticalCenter: parent.verticalCenter; }
-        text: qsTr("Remind settings");
-    }
+//    Text {
+//        font.pixelSize: constant.fontXXLarge;
+//        color: constant.colorLight;
+//        anchors { left: parent.left; leftMargin: constant.paddingXLarge; verticalCenter: parent.verticalCenter; }
+//        text: qsTr("Remind settings");
+//    }
 
     //acceptButtonText: qsTr("OK");
 
@@ -47,14 +47,16 @@ Dialog {
     Flickable {
         id: flickable;
         anchors.fill: parent;
+        y:constant.graphicSizeMedium
         clip: true;
         contentWidth: width;
-        contentHeight: contentCol.height + constant.paddingLarge*2;
+        contentHeight: contentCol.height + constant.paddingLarge*6;
         Column {
             id: contentCol;
             anchors {
                 left: parent.left; right: parent.right; top: parent.top;
                 margins: constant.paddingLarge;
+                topMargin:constant.paddingLarge*5
             }
             spacing: constant.paddingMedium;
             Text {
@@ -79,11 +81,11 @@ Dialog {
                     }
                 }
             }
-            Text {
-                font: constant.labelFont;
-                color: constant.colorMid;
-                text: qsTr("Remind interval");
-            }
+//            Text {
+//                font: constant.labelFont;
+//                color: constant.colorMid;
+//                text: qsTr("Remind interval");
+//            }
             Repeater {
                 model: [
                     [qsTr("Remind at background"),"remindBackground"],

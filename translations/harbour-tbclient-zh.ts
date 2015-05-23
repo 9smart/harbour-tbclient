@@ -138,7 +138,7 @@
     </message>
     <message>
         <source>View history message</source>
-        <translation>查看历史消息</translation>
+        <translation type="vanished">查看历史消息</translation>
     </message>
 </context>
 <context>
@@ -366,7 +366,7 @@
     </message>
     <message>
         <source>Forum manage</source>
-        <translation>吧务管理(需在浏览器登录)</translation>
+        <translation type="vanished">吧务管理(需在浏览器登录)</translation>
     </message>
     <message>
         <source>Jump to page</source>
@@ -374,11 +374,19 @@
     </message>
     <message>
         <source>Create a thread</source>
-        <translation>发表主题</translation>
+        <translation type="vanished">发表主题</translation>
     </message>
     <message>
         <source>History</source>
         <translation>打开的贴子</translation>
+    </message>
+    <message>
+        <source>New post</source>
+        <translation>发帖</translation>
+    </message>
+    <message>
+        <source>refresh</source>
+        <translation>刷新</translation>
     </message>
 </context>
 <context>
@@ -437,6 +445,10 @@
     <message>
         <source>Error loading image</source>
         <translation>加载错误</translation>
+    </message>
+    <message>
+        <source>Image saved to %1</source>
+        <translation>图片存储到%1</translation>
     </message>
 </context>
 <context>
@@ -647,6 +659,25 @@
     </message>
 </context>
 <context>
+    <name>NavigationPanel</name>
+    <message>
+        <source>Boutique</source>
+        <translation type="unfinished">精品区</translation>
+    </message>
+    <message>
+        <source>View photos</source>
+        <translation type="unfinished">看图</translation>
+    </message>
+    <message>
+        <source>Jump to page</source>
+        <translation type="unfinished">跳页</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished">打开的贴子</translation>
+    </message>
+</context>
+<context>
     <name>PageJumper</name>
     <message>
         <source>Jump to page: [1-%1]</source>
@@ -850,7 +881,7 @@
     <name>RemindSettingDialog</name>
     <message>
         <source>Remind settings</source>
-        <translation>提醒设置</translation>
+        <translation type="vanished">提醒设置</translation>
     </message>
     <message>
         <source>Disabled</source>
@@ -1274,6 +1305,30 @@
     <message>
         <source>Commit to prison</source>
         <translation type="vanished">封禁</translation>
+    </message>
+    <message>
+        <source>Author only</source>
+        <translation>只看楼主</translation>
+    </message>
+    <message>
+        <source>Reverse</source>
+        <translation>倒序查看</translation>
+    </message>
+    <message>
+        <source>Jump to page</source>
+        <translation>跳页</translation>
+    </message>
+    <message>
+        <source>Open browser</source>
+        <translation>用浏览器打开</translation>
+    </message>
+    <message>
+        <source>New post</source>
+        <translation>回复</translation>
+    </message>
+    <message>
+        <source>refresh</source>
+        <translation>刷新</translation>
     </message>
 </context>
 <context>

@@ -75,7 +75,7 @@ Item {
                 }
                 MouseArea {
                     anchors.fill: parent;
-                    onClicked: signalCenter.viewImage(url)
+                    onClicked: signalCenter.viewImage(url,preview.sourceSize.height,preview.sourceSize.width)//signalCenter.viewImage(url)
                 }
             }
             Rectangle {
@@ -98,7 +98,7 @@ Item {
             Rectangle {
                 width: parent.width;
                 height: headingLeftLabel.height + constant.paddingMedium*2;
-                color: theme.inverted ? "#2c3543" : "#e6e8ea"
+                color: "#A02c3543"//theme.inverted ? "#2c3543" : "#e6e8ea"
                 Text {
                     id: headingLeftLabel;
                     anchors {
