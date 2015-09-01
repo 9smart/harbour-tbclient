@@ -21,7 +21,7 @@ Item {
 //    }
     Rectangle{
         anchors.fill: parent;
-        color: "#22ffffff"
+        color: "#00ffffff"
     }
 
     Column {

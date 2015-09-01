@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import com.yeatse.tbclient 1.0
+//import org.nemomobile.notifications 1.0
 import org.nemomobile.example 1.0
 import "../js/main.js" as Script
 
@@ -41,13 +42,22 @@ Item {
             }
         }
     }
+//    Notification{
+//        id: notification
+//        onClicked: {
+//            app.activate();
+//            console.log(pageStack[pageStack.depth])
+//            pageStack.push(Qt.resolvedUrl("Message/MessagePage.qml"));
+
+//        }
+//    }
 
     Notification{
         id: notification
 
         category: "x-nemo.example"
         appName: qsTr("tbclient")
-        appIcon: "/usr/share/icons/hicolor/86x86/apps/harbour-tbclient.png"
+        appIcon: "gfx/icon-notice.png"
         remoteActions: [{
             "name": "default",
             "displayName": "hahahaha",
@@ -158,9 +168,18 @@ Item {
             if (list.length > 0){
                 var title = qsTr("Baidu Tieba");
                 var message = list.join("\n");
+//                notification.previewBody = title;
+//                notification.previewSummary = message;
+//                notification.publish();
                 notification.showNotification(count, title, message);
             } else {
                 notification.clearNotifications();
+
+
+//                notification.previewBody = qsTr("Baidu Tieba");
+//                notification.previewSummary = "15237";
+//                notification.publish();
+                //notification.close();
             }
         }
 
@@ -182,4 +201,5 @@ Item {
             Script.getMessage(internal.loadMessage, internal.loadError);
         }
     }
+
 }

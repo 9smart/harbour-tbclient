@@ -3,6 +3,7 @@
 
 #ifndef Q_OS_SAILFISH
 #include <QSystemDeviceInfo>
+#include <QUrlQuery>
 #endif
 #include <QtNetwork>
 
@@ -32,6 +33,8 @@
 #ifdef Q_OS_SAILFISH
 #include <notification.h>
 #endif
+
+#include <QString>
 
 Utility::Utility(QObject *parent) :
     QObject(parent)
@@ -540,15 +543,20 @@ QString Utility::hasForumName(const QByteArray &link)
             QTextCodec* codec = QTextCodec::codecForName("GBK");
             kw = codec->toUnicode(ba);
 #else
-    url.setQuery("kw");
+    //url.setQuery("kw");
     if (url.host().endsWith("tieba.baidu.com") && url.hasQuery()){
+        QUrlQuery fx = QUrlQuery(url);
         QStringList path = url.path(QUrl::EncodeUnicode).split('/');
         url.setQuery("ie");
-        if (path.contains("m") || url.query() == "utf-8"){
-            url.setQuery("kw");
-            kw = url.query();
+        if (path.contains("m") || fx.queryItemValue("ie") == "utf-8"){
+            qDebug() << "utf-8:"<<kw;
+            kw=fx.queryItemValue("kw");
         } else {
-            kw = url.query(QUrl::EncodeUnicode);
+            qDebug() << "GBK:"<<kw;
+            QByteArray ba = fx.queryItemValue("kw").toLatin1();
+            q_fromPercentEncoding(&ba, '%');
+            QTextCodec* codec = QTextCodec::codecForName("GBK");
+            kw = codec->toUnicode(ba);
 #endif
         }
     }
@@ -564,9 +572,10 @@ QString Utility::fixUrl(const QString &url) const
         if (temp.hasEncodedQueryItem("url")){
             return QUrl::fromEncoded(temp.queryItemValue("url").toAscii()).toString();
 #else
-        temp.setQuery("url");
-        if (temp.hasQuery()){
-            return temp.query(QUrl::EncodeUnicode);
+        QUrlQuery fx = QUrlQuery(temp);
+        if (fx.hasQueryItem("url")){
+            qDebug() << "===8:"<<fx.queryItemValue("url");
+            //return fx.queryItemValue("url");
 #endif
         }
     }

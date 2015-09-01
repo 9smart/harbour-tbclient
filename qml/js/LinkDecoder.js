@@ -18,19 +18,34 @@ function linkActivated(link){
     }
 }
 
-function decodeLink(url){
-    var m = url.match(/(?:tieba|wapp).baidu.com\/(?:p\/|f\?.*z=|.*m\?kz=)(\d+)/);
-    if (m) return enterThread({"threadId": m[1]});
-
-    m = utility.hasForumName(url);
-    if (m) return enterForum(m);
-
-    url = utility.fixUrl(url);
-    if (url.indexOf("youku.com") > 0){
-        showMessage(qsTr("Loading video..."));
-        query(url);
-        return;
+function getQueryString(url,name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    var r = url.match(reg);
+    if (r != null) {
+        return unescape(r[2]);
     }
+    return null;
+}
 
-    openBrowser(url);
+function decodeLink(url){
+    if(url.match(/checkurl\?url\=/g)){
+        //console.log("...openBrowser:"+url)
+        url=url.replace("http://tieba.baidu.com/mo/q/checkurl?url=","");
+        url=decodeURIComponent(url);
+        url=url.substring(0,url.indexOf("&meta"))
+        openBrowser(url);
+    }else{
+        var m = url.match(/(?:tieba|wapp).baidu.com\/(?:p\/|f\?.*z=|.*m\?kz=)(\d+)/);
+        if (m) return enterThread({"threadId": m[1]});
+        m = utility.hasForumName(url);
+        if (m) return enterForum(m);
+
+        url = utility.fixUrl(url);
+        if (url.indexOf("youku.com") > 0){
+            showMessage(qsTr("Loading video..."));
+            query(url);
+            return;
+        }
+        openBrowser(url);
+    }
 }

@@ -14,7 +14,7 @@ Name:       harbour-tbclient
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    tbclient
 Version:    0.4
-Release:    1
+Release:    3
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/

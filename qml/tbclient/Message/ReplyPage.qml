@@ -4,8 +4,14 @@ import "../Component"
 import "../../js/main.js" as Script
 
 Item {
-    id: page;
-    anchors.fill: parent;
+    id: replaypage;
+    height: tabGroup.height; width: tabGroup.width
+
+    property int currentPage: 1;
+    property bool hasMore: false;
+    property bool firstStart: true;
+
+    //anchors.fill: parent;
     //title: qsTr("Reply me");
     Component.onCompleted: {
         takeToForeground();
@@ -30,7 +36,7 @@ Item {
 
     function getlist(option){
         option = option||"renew";
-        var opt = { page: page, model: view.model };
+        var opt = { page: replaypage, model: view.model };
         if (option === "renew"){
             infoCenter.clear("replyme");
             opt.renew = true;
@@ -47,8 +53,8 @@ Item {
     function loadFromCache(){
         try {
             var obj = JSON.parse(utility.getUserData("replyme"));
-            page.hasMore = obj.page.has_more === "1";
-            page.currentPage = obj.page.current_page;
+            replaypage.hasMore = obj.page.has_more === "1";
+            replaypage.currentPage = obj.page.current_page;
             Script.BaiduParser.loadReplyme({model: view.model, renew: true}, obj.reply_list);
             return true;
         } catch(e){
@@ -56,18 +62,15 @@ Item {
         }
     }
 
-    property int currentPage: 1;
-    property bool hasMore: false;
-    property bool firstStart: true;
     SilicaFlickable{
         anchors.fill: parent
         PullDownMenu{
-                   MenuItem{
-                       text: qsTr("Refresh")
-                       onClicked: {
-                           getlist();
-                       }
+               MenuItem{
+                   text: qsTr("Refresh")
+                   onClicked: {
+                       getlist();
                    }
+               }
                }
         SilicaListView {
             id: view;
@@ -179,4 +182,5 @@ Item {
         }
         VerticalScrollDecorator { flickable: view; }
     }
+
 }

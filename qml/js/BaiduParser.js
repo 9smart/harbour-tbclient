@@ -194,7 +194,8 @@ var BaiduParser = {
                 push("Text", c.text, 0, 0, 0);
                 return;
             case "1":
-                pushRich(l, "<a href='link:"+c.link+"'>"+c.text+"</a>");
+                //console.log("==link:"+c.link+"==,==text:"+c.text)
+                pushRich(l, "<a href='link:"+c.link+"'>"+c.text.replace(/\&/g,"&amp;")+"</a>");
                 return;
             case "2":
                 pushRich(l, getEmoticon(c.text, c.c));

@@ -91,7 +91,7 @@ MyPage {
                 Rectangle {
                     id: bottomBanner;
                     anchors { fill: parent; topMargin: parent.height*3/5; }
-                    color: "#22ffffff";
+                    color: "#00ffffff";
                 }
 
                 Image {

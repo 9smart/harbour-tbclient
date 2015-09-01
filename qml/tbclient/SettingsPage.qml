@@ -165,21 +165,16 @@ MyPage {
                     signatureDiag.open();
                 }
             }
-            SettingsItem {
-                title: qsTr("User agent");
-                subtitle: clientTypeSelector.value;
-                height: clientTypeSelector._menuOpen ? 88*4:88;
-                ComboBox {
-                    id:clientTypeSelector
-                    label: qsTr("                         ");
-                    currentIndex:tbsettings.clientType-1
-                    menu: ContextMenu {
-                        MenuItem { text: "iPhone" }
-                        MenuItem { text: "Android" }
-                        MenuItem { text: "WindowsPhone" }
-                    }
-                    onCurrentIndexChanged: tbsettings.clientType = currentIndex + 1;
+            ComboBox {
+                id:clientTypeSelector
+                label: qsTr("User agent");
+                currentIndex:tbsettings.clientType-1
+                menu: ContextMenu {
+                    MenuItem { text: "iPhone" }
+                    MenuItem { text: "Android" }
+                    MenuItem { text: "WindowsPhone" }
                 }
+                onCurrentIndexChanged: tbsettings.clientType = currentIndex + 1;
             }
             Rectangle {
                 anchors { left: parent.left; right: parent.right; margins: constant.paddingXLarge; }

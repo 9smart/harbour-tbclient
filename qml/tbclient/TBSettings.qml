@@ -22,7 +22,7 @@ QtObject {
     property string signature: utility.getValue("signature", "");
     onSignatureChanged: utility.setValue("signature", signature);
 
-    property bool monitorNetworkMode: utility.getValue("monitorNetworkMode", false);
+    property bool monitorNetworkMode: utility.getValue("monitorNetworkMode", false) == "true";
     onMonitorNetworkModeChanged: utility.setValue("monitorNetworkMode", monitorNetworkMode);
 
     property string draftBox: utility.getValue("draftBox", "");
@@ -73,7 +73,7 @@ QtObject {
     onBgImageUrlChanged: utility.setValue("bgImageUrl", bgImageUrl);
 
     // remind
-    property int remindInterval: utility.getValue("remind/interval", 5);
+    property int remindInterval: utility.getValue("remind/interval", 10);
     onRemindIntervalChanged: utility.setValue("remind/interval", remindInterval);
 
     property bool remindBackground: utility.getValue("remind/background", true) == "true";

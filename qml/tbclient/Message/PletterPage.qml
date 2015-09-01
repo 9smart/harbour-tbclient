@@ -4,8 +4,13 @@ import "../Component"
 import "../../js/main.js" as Script
 
 Item {
-    id: page;
-    anchors.fill: parent;
+    id: pletterpage;
+    height: tabGroup.height; width: tabGroup.width
+    property int currentPage: 1;
+    property bool hasMore: false;
+    property bool firstStart: true;
+
+    //anchors.fill: parent;
 //    title: qsTr("Private letters");
 
     Component.onCompleted: {
@@ -30,7 +35,7 @@ Item {
 
     function getlist(option){
         option = option||"renew";
-        var opt = { page: page, model: view.model };
+        var opt = { page: pletterpage, model: view.model };
         if (option === "renew"){
             infoCenter.clear("pletter");
             opt.renew = true;
@@ -47,8 +52,8 @@ Item {
     function loadFromCache(){
         try {
             var obj = JSON.parse(utility.getUserData("pletter"));
-            page.hasMore = obj.has_more === "1";
-            page.currentPage = 1;
+            pletterpage.hasMore = obj.has_more === "1";
+            pletterpage.currentPage = 1;
             Script.BaiduParser.loadComlist({renew: true, model: view.model}, obj.record);
             return true;
         } catch(e){
@@ -56,9 +61,7 @@ Item {
         }
     }
 
-    property int currentPage: 1;
-    property bool hasMore: false;
-    property bool firstStart: true;
+
 
     function delcom(index){
         var execute = function(){
@@ -133,7 +136,7 @@ Item {
                         Text {
                             width: parent.width;
                             wrapMode: Text.WrapAnywhere;
-                            maximumLineCount: 2;
+                            maximumLineCount: 4;
                             elide: Text.ElideRight;
                             text: model.text;
                             color: constant.colorMid;
@@ -165,4 +168,5 @@ Item {
         }
         VerticalScrollDecorator { flickable: view; }
     }
+
 }

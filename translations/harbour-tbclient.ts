@@ -244,21 +244,6 @@
     </message>
 </context>
 <context>
-    <name>FloorMenu</name>
-    <message>
-        <source>Copy content</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete this post</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Commit to prison</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>FloorPage</name>
     <message>
         <source>Subfloor</source>
@@ -617,25 +602,6 @@
     <name>MyPage</name>
     <message>
         <source>Loading</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>NavigationPanel</name>
-    <message>
-        <source>Boutique</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>View photos</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Jump to page</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>History</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1027,10 +993,6 @@
     </message>
     <message>
         <source>User agent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>                         </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

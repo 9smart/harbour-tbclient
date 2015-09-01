@@ -151,16 +151,20 @@ MyPage {
                     }
                     Text {
                         width: parent.width;
-                        wrapMode: Text.Wrap;
                         font: constant.labelFont;
-                        color: "white";
                         text: content;
+                        elide: Text.ElideRight;
+                        textFormat: Text.PlainText;
+                        font.pixelSize: constant.fontXXSmall;
+                        color: constant.colorMid;
+                        wrapMode: Text.WrapAnywhere;
+                        maximumLineCount: 4;
                     }
                     Text {
                         width: parent.width;
                         horizontalAlignment: isMe ? Text.AlignRight : Text.AlignLeft;
                         font.pixelSize: constant.fontXXSmall;
-                        color: "white";
+                        color: constant.colorMid;
                         text: time;
                     }
                 }

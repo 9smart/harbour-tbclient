@@ -259,15 +259,15 @@
     <name>FloorMenu</name>
     <message>
         <source>Copy content</source>
-        <translation>复制内容</translation>
+        <translation type="vanished">复制内容</translation>
     </message>
     <message>
         <source>Delete this post</source>
-        <translation>删除该回复</translation>
+        <translation type="vanished">删除该回复</translation>
     </message>
     <message>
         <source>Commit to prison</source>
-        <translation>封禁用户</translation>
+        <translation type="vanished">封禁用户</translation>
     </message>
 </context>
 <context>
@@ -278,7 +278,7 @@
     </message>
     <message>
         <source>Success</source>
-        <translation>操纵成功</translation>
+        <translation>操作成功</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -662,19 +662,19 @@
     <name>NavigationPanel</name>
     <message>
         <source>Boutique</source>
-        <translation type="unfinished">精品区</translation>
+        <translation type="vanished">精品区</translation>
     </message>
     <message>
         <source>View photos</source>
-        <translation type="unfinished">看图</translation>
+        <translation type="vanished">看图</translation>
     </message>
     <message>
         <source>Jump to page</source>
-        <translation type="unfinished">跳页</translation>
+        <translation type="vanished">跳页</translation>
     </message>
     <message>
         <source>History</source>
-        <translation type="unfinished">打开的贴子</translation>
+        <translation type="vanished">打开的贴子</translation>
     </message>
 </context>
 <context>
@@ -1081,7 +1081,7 @@
     </message>
     <message>
         <source>                         </source>
-        <translation>                         </translation>
+        <translation type="vanished">                         </translation>
     </message>
 </context>
 <context>

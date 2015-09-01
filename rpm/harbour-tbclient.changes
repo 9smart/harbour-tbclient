@@ -7,6 +7,15 @@
 
 # * date Author's Name <author's email> version-release
 # - Summary of changes
+* Mon Aug 03 2015 Chanxi <tianzhiyizu@gmail.com> 0.4-3
+- 修改贴内链接显示不全的bug
+- 修复部分链接打开跳转到IE吧的bug
+
+* Tue Jun 30 2015 BirdZhang <0312birdzhang@gmail.com> 0.4-2
+- 修改通知操作方式
+- 修改个人资料页面
+- 修复提醒设置不生效的bug
+
 * Fri Jun 22 2015 Chanxi <tianzhiyizu@gmail.com> 0.4-1
 - 修改操作菜单显示方式
 - 帖内、楼中楼内复制行为可使用

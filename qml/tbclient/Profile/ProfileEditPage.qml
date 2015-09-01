@@ -94,7 +94,7 @@ MyPage {
             Rectangle {
                 width: parent.width;
                 height: headingLeftLabel.height + constant.paddingMedium*2;
-                color: "#22ffffff";
+                color: "#00ffffff";
                 Text {
                     id: headingLeftLabel;
                     anchors {
@@ -133,7 +133,7 @@ MyPage {
             Rectangle {
                 width: parent.width;
                 height: headingLeftLabel.height + constant.paddingMedium*2;
-                color: "#22ffffff";
+                color: "#00ffffff";
                 Text {
                     anchors {
                         left: parent.left; leftMargin: constant.paddingMedium;
@@ -169,7 +169,7 @@ MyPage {
             Rectangle {
                 width: parent.width;
                 height: headingLeftLabel.height + constant.paddingMedium*2;
-                color: "#22ffffff";
+                color: "#00ffffff";
                 Text {
                     anchors {
                         left: parent.left; leftMargin: constant.paddingMedium;
