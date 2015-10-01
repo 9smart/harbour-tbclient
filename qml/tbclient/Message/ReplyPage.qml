@@ -3,9 +3,9 @@ import Sailfish.Silica 1.0
 import "../Component"
 import "../../js/main.js" as Script
 
-Item {
-    id: replaypage;
-    height: tabGroup.height; width: tabGroup.width
+MyPage{//Item {
+    id: page;
+    //height: tabGroup.height; width: tabGroup.width
 
     property int currentPage: 1;
     property bool hasMore: false;
@@ -36,7 +36,7 @@ Item {
 
     function getlist(option){
         option = option||"renew";
-        var opt = { page: replaypage, model: view.model };
+        var opt = { page: page, model: view.model };
         if (option === "renew"){
             infoCenter.clear("replyme");
             opt.renew = true;
@@ -53,8 +53,8 @@ Item {
     function loadFromCache(){
         try {
             var obj = JSON.parse(utility.getUserData("replyme"));
-            replaypage.hasMore = obj.page.has_more === "1";
-            replaypage.currentPage = obj.page.current_page;
+            page.hasMore = obj.page.has_more === "1";
+            page.currentPage = obj.page.current_page;
             Script.BaiduParser.loadReplyme({model: view.model, renew: true}, obj.reply_list);
             return true;
         } catch(e){
@@ -64,20 +64,24 @@ Item {
 
     SilicaFlickable{
         anchors.fill: parent
-        PullDownMenu{
-               MenuItem{
-                   text: qsTr("Refresh")
-                   onClicked: {
-                       getlist();
-                   }
-               }
-               }
+
         SilicaListView {
             id: view;
             anchors.fill: parent;
+            header: PageHeader{
+                title:qsTr("Reply me");
+            }
+            PullDownMenu{
+                MenuItem{
+                    text: qsTr("Refresh")
+                    onClicked: {
+                        getlist();
+                    }
+                }
+            }
             model: ListModel {}
             delegate: delegateComp;
-            //header:
+
             footer: FooterItem {
                 visible: view.count > 0;
                 enabled: hasMore && !loading;

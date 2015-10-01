@@ -308,17 +308,17 @@ MyPage {
                 height: parent.height;
                 anchors.right: icn1.left;
                 anchors.rightMargin: Theme.paddingMedium;
-                icon.source: "image://theme/icon-m-alarm";
-                onClicked: pageStack.push(Qt.resolvedUrl("Message/MessagePage.qml"));
+                icon.source: "image://theme/icon-m-message";
+                onClicked: pageStack.push(Qt.resolvedUrl("Message/ReplyPage.qml"));
             }
-//            IconButton{
-//                id: icn3;
-//                width: parent.height*1.2;
-//                height: parent.height;
-//                anchors.right: icn2.left;
-//                icon.source: "image://theme/icon-m-message";
-//                onClicked: pageStack.push(Qt.resolvedUrl("ProfilePage.qml"), { uid: tbsettings.currentUid });
-//            }
+            IconButton{
+                id: icn3;
+                width: parent.height*1.2;
+                height: parent.height;
+                anchors.right: icn2.left;
+                icon.source: "gfx/icon-m-message.png";
+                onClicked: pageStack.push(Qt.resolvedUrl("Message/AtmePage.qml"));
+            }
 //            IconButton{
 //                id: icn4;
 //                width: parent.height*1.2;
@@ -327,6 +327,36 @@ MyPage {
 //                icon.source: "gfx/icon_sign.png";
 //                onClicked: pageStack.push(Qt.resolvedUrl("BatchSignPage.qml"));
 //            }
+            Label{
+                id:replaycount
+                anchors{
+                    top:icn2.top
+                    right:icn2.right
+                    rightMargin: Theme.paddingSmall
+                }
+                //width:icn2.width
+                text:infoCenter.replyme>99?"99+":infoCenter.replyme
+                font.pixelSize: constant.fontXSmall;
+                color: constant.colorMid;
+                elide: Text.ElideRight;
+                maximumLineCount: 1;
+
+            }
+            Label{
+                id:atmecount
+                anchors{
+                    top:icn3.top
+                    right:icn3.right
+                    rightMargin: Theme.paddingSmall
+                }
+                //width: icn3.width
+                text:infoCenter.atme>99?"99+":infoCenter.atme
+                font.pixelSize: constant.fontXSmall;
+                color: constant.colorMid;
+                elide: Text.ElideRight;
+                maximumLineCount: 1;
+
+            }
         }
         VerticalScrollDecorator {
             flickable: view;

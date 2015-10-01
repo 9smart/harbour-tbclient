@@ -3,14 +3,15 @@ import Sailfish.Silica 1.0
 import "../Component"
 import "../../js/main.js" as Script
 
-Item {
-    id: atmepage;
-    height: tabGroup.height; width: tabGroup.width
+//Item {
+MyPage{
+    id: page;
+    //height: tabGroup.height; width: tabGroup.width
     //anchors.fill: parent;
     property int currentPage: 1;
     property bool hasMore: false;
     property bool firstStart: true;
-    //    title: qsTr("At me");
+        //title: qsTr("At me");
 
         Component.onCompleted: {
             takeToForeground();
@@ -34,7 +35,7 @@ Item {
 
         function getlist(option){
             option = option||"renew";
-            var opt = { page: atmepage, model: view.model };
+            var opt = { page: page, model: view.model };
             if (option === "renew"){
                 infoCenter.clear("atme");
                 opt.renew = true;
@@ -51,8 +52,8 @@ Item {
         function loadFromCache(){
             try {
                 var obj = JSON.parse(utility.getUserData("atme"));
-                atmepage.hasMore = obj.page.has_more === "1";
-                atmepage.currentPage = obj.page.current_page;
+                page.hasMore = obj.page.has_more === "1";
+                page.currentPage = obj.page.current_page;
                 Script.BaiduParser.loadAtme({model: view.model, renew: true},obj.at_list);
                 return true;
             } catch(e){
@@ -63,17 +64,22 @@ Item {
 
         SilicaFlickable{
             anchors.fill: parent
-            PullDownMenu{
-                MenuItem{
-                    text: qsTr("Refresh")
-                    onClicked: {
-                        getlist();
-                    }
-                }
-            }
+
             SilicaListView {
                 id: view;
                 anchors.fill: parent;
+                header: PageHeader{
+                    title:qsTr("At me");
+                }
+
+                PullDownMenu{
+                    MenuItem{
+                        text: qsTr("Refresh")
+                        onClicked: {
+                            getlist();
+                        }
+                    }
+                }
                 model: ListModel {}
                 delegate:
                     delegateComp;

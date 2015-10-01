@@ -7,9 +7,13 @@ MyPage {
     id: page;
 
     property string defaultTab: "replyme";
-
+    property int tabGroupCurrentIndex:0;
     objectName: "MessagePage";
 
+
+    onTabGroupCurrentIndexChanged: {
+
+    }
 
     title: qsTr("MessagePage")
     //tabGroup.content[tabGroup.current].title

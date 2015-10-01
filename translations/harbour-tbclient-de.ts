@@ -37,6 +37,10 @@
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>At me</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AvatarEditPage</name>
@@ -160,10 +164,6 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>My Cover</source>
-        <translation type="vanished">Mein Cover</translation>
-    </message>
-    <message>
         <source>At(s):</source>
         <translation type="unfinished"></translation>
     </message>
@@ -248,18 +248,18 @@
     </message>
 </context>
 <context>
-    <name>FirstPage</name>
+    <name>FloorMenu</name>
     <message>
-        <source>Show Page 2</source>
-        <translation type="vanished">Zur Seite 2</translation>
+        <source>Copy content</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>UI Template</source>
-        <translation type="vanished">UI-Vorlage</translation>
+        <source>Delete this post</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hello Sailors</source>
-        <translation type="vanished">Hallo Matrosen</translation>
+        <source>Commit to prison</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -625,6 +625,25 @@
     </message>
 </context>
 <context>
+    <name>NavigationPanel</name>
+    <message>
+        <source>Boutique</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View photos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jump to page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PageJumper</name>
     <message>
         <source>Jump to page: [1-%1]</source>
@@ -883,6 +902,10 @@
         <source>From %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Reply me</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ScribblePage</name>
@@ -932,17 +955,6 @@
     <message>
         <source>Search web</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SecondPage</name>
-    <message>
-        <source>Nested Page</source>
-        <translation type="vanished">Unterseite</translation>
-    </message>
-    <message>
-        <source>Item</source>
-        <translation type="vanished">Element</translation>
     </message>
 </context>
 <context>

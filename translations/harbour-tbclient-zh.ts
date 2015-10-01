@@ -11,10 +11,6 @@
         <source>QML Tieba Client</source>
         <translation>贴吧客户端Qt版</translation>
     </message>
-    <message>
-        <source>Project homepage</source>
-        <translation type="vanished">项目首页</translation>
-    </message>
 </context>
 <context>
     <name>AccountPage</name>
@@ -40,6 +36,10 @@
     <message>
         <source>Refresh</source>
         <translation>刷新</translation>
+    </message>
+    <message>
+        <source>At me</source>
+        <translation type="unfinished">@ 我的</translation>
     </message>
 </context>
 <context>
@@ -136,10 +136,6 @@
         <source>Talking with %1</source>
         <translation>与%1对话中</translation>
     </message>
-    <message>
-        <source>View history message</source>
-        <translation type="vanished">查看历史消息</translation>
-    </message>
 </context>
 <context>
     <name>CommitDialog</name>
@@ -170,10 +166,6 @@
     <message>
         <source>At(s):</source>
         <translation>@ 我:</translation>
-    </message>
-    <message>
-        <source>Pletter(s):</source>
-        <translation type="vanished">私信:</translation>
     </message>
     <message>
         <source>Reply(es):</source>
@@ -259,15 +251,15 @@
     <name>FloorMenu</name>
     <message>
         <source>Copy content</source>
-        <translation type="vanished">复制内容</translation>
+        <translation>复制内容</translation>
     </message>
     <message>
         <source>Delete this post</source>
-        <translation type="vanished">删除该回复</translation>
+        <translation>删除该回复</translation>
     </message>
     <message>
         <source>Commit to prison</source>
-        <translation type="vanished">封禁用户</translation>
+        <translation>封禁用户</translation>
     </message>
 </context>
 <context>
@@ -303,10 +295,6 @@
     <message>
         <source>Reply to %1 :</source>
         <translation>回复 %1 :</translation>
-    </message>
-    <message>
-        <source>text</source>
-        <translation type="vanished">内容</translation>
     </message>
     <message>
         <source>Copy content</source>
@@ -365,16 +353,8 @@
         <translation>看图</translation>
     </message>
     <message>
-        <source>Forum manage</source>
-        <translation type="vanished">吧务管理(需在浏览器登录)</translation>
-    </message>
-    <message>
         <source>Jump to page</source>
         <translation>跳页</translation>
-    </message>
-    <message>
-        <source>Create a thread</source>
-        <translation type="vanished">发表主题</translation>
     </message>
     <message>
         <source>History</source>
@@ -460,12 +440,6 @@
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n new pletter(s)</source>
-        <translation type="vanished">
-            <numerusform>%n个新私信</numerusform>
-        </translation>
-    </message>
-    <message numerus="yes">
         <source>%n new bookmark update(s)</source>
         <translation>
             <numerusform>%n个收藏更新</numerusform>
@@ -494,10 +468,6 @@
     <message>
         <source>fan</source>
         <translation>粉丝</translation>
-    </message>
-    <message>
-        <source>pletter</source>
-        <translation type="vanished">私信</translation>
     </message>
     <message>
         <source>bookmark</source>
@@ -585,10 +555,6 @@
         <translation>搜吧、搜贴</translation>
     </message>
     <message>
-        <source>signed</source>
-        <translation type="vanished">已签</translation>
-    </message>
-    <message>
         <source>bar</source>
         <translation>吧</translation>
     </message>
@@ -662,19 +628,19 @@
     <name>NavigationPanel</name>
     <message>
         <source>Boutique</source>
-        <translation type="vanished">精品区</translation>
+        <translation>精品区</translation>
     </message>
     <message>
         <source>View photos</source>
-        <translation type="vanished">看图</translation>
+        <translation>看图</translation>
     </message>
     <message>
         <source>Jump to page</source>
-        <translation type="vanished">跳页</translation>
+        <translation>跳页</translation>
     </message>
     <message>
         <source>History</source>
-        <translation type="vanished">打开的贴子</translation>
+        <translation>打开的贴子</translation>
     </message>
 </context>
 <context>
@@ -880,10 +846,6 @@
 <context>
     <name>RemindSettingDialog</name>
     <message>
-        <source>Remind settings</source>
-        <translation type="vanished">提醒设置</translation>
-    </message>
-    <message>
         <source>Disabled</source>
         <translation>不启动</translation>
     </message>
@@ -939,6 +901,10 @@
     <message>
         <source>From %1</source>
         <translation>来自%1吧</translation>
+    </message>
+    <message>
+        <source>Reply me</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1028,10 +994,6 @@
         <translation>设置中心</translation>
     </message>
     <message>
-        <source>Night theme</source>
-        <translation type="vanished">暗色主题</translation>
-    </message>
-    <message>
         <source>Show image</source>
         <translation>显示图片</translation>
     </message>
@@ -1060,10 +1022,6 @@
         <translation>点击设置</translation>
     </message>
     <message>
-        <source>Background image(long press to clear)</source>
-        <translation type="vanished">背景图片（长按恢复默认）</translation>
-    </message>
-    <message>
         <source>Signature</source>
         <translation>签名</translation>
     </message>
@@ -1078,10 +1036,6 @@
     <message>
         <source>User agent</source>
         <translation>客户端识别码</translation>
-    </message>
-    <message>
-        <source>                         </source>
-        <translation type="vanished">                         </translation>
     </message>
 </context>
 <context>
@@ -1108,13 +1062,6 @@
     <message>
         <source>High speed network used</source>
         <translation>正在使用3G/Wifi网络</translation>
-    </message>
-</context>
-<context>
-    <name>ThreadHeader</name>
-    <message>
-        <source>Bar</source>
-        <translation type="vanished">吧</translation>
     </message>
 </context>
 <context>
@@ -1281,30 +1228,6 @@
     <message>
         <source>New tab</source>
         <translation>新标签</translation>
-    </message>
-    <message>
-        <source>Remove from bookmark</source>
-        <translation type="vanished">取消收藏</translation>
-    </message>
-    <message>
-        <source>Add to bookmark</source>
-        <translation type="vanished">添加到收藏</translation>
-    </message>
-    <message>
-        <source>Reader mode</source>
-        <translation type="vanished">阅读模式</translation>
-    </message>
-    <message>
-        <source>Copy content</source>
-        <translation type="vanished">复制内容</translation>
-    </message>
-    <message>
-        <source>Delete this post</source>
-        <translation type="vanished">删除</translation>
-    </message>
-    <message>
-        <source>Commit to prison</source>
-        <translation type="vanished">封禁</translation>
     </message>
     <message>
         <source>Author only</source>

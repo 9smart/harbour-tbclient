@@ -46,10 +46,9 @@ Item {
 
     visible: false;
 
-    Audio {
+    Audio{
         id: audio;
     }
-
     Connections {
         id: coldDown;
         property string pendingMd5;

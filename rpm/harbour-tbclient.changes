@@ -7,6 +7,11 @@
 
 # * date Author's Name <author's email> version-release
 # - Summary of changes
+
+* Thu Sep 30 2015 BirdZhang <0312birdzhang@gmail.com> 0.4-4
+- 首页显示回复跟@数量
+- 更改消息查看页面
+
 * Mon Aug 03 2015 Chanxi <tianzhiyizu@gmail.com> 0.4-3
 - 修改贴内链接显示不全的bug
 - 修复部分链接打开跳转到IE吧的bug

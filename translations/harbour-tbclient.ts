@@ -37,6 +37,10 @@
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>At me</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AvatarEditPage</name>
@@ -240,6 +244,21 @@
     </message>
     <message>
         <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FloorMenu</name>
+    <message>
+        <source>Copy content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete this post</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Commit to prison</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -606,6 +625,25 @@
     </message>
 </context>
 <context>
+    <name>NavigationPanel</name>
+    <message>
+        <source>Boutique</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View photos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jump to page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PageJumper</name>
     <message>
         <source>Jump to page: [1-%1]</source>
@@ -862,6 +900,10 @@
     </message>
     <message>
         <source>From %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reply me</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
