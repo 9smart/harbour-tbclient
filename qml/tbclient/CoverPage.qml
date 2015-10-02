@@ -37,18 +37,18 @@ CoverBackground {
     CoverActionList {
         id: coverAction
         CoverAction {
-            iconSource: "image://theme/icon-cover-alarm"
+            iconSource: "image://theme/icon-m-message"
             onTriggered: {
                 app.activate();
-                console.log(pageStack[pageStack.depth])
-                pageStack.push(Qt.resolvedUrl("Message/MessagePage.qml"));
+                pageStack.push(Qt.resolvedUrl("Message/ReplyPage.qml"));
             }
         }
 
         CoverAction {
-            iconSource: "image://theme/icon-cover-refresh"
+            iconSource: "gfx/icon-m-message.png"
             onTriggered:{
-                //imsgAt.text=1;
+                app.activate();
+                pageStack.push(Qt.resolvedUrl("Message/AtmePage.qml"));
             }
         }
     }
