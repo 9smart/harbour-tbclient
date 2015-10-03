@@ -39,7 +39,7 @@
     </message>
     <message>
         <source>At me</source>
-        <translation type="unfinished">@ 我的</translation>
+        <translation>@ 我的</translation>
     </message>
 </context>
 <context>
@@ -904,7 +904,7 @@
     </message>
     <message>
         <source>Reply me</source>
-        <translation type="unfinished"></translation>
+        <translation>回复我的</translation>
     </message>
 </context>
 <context>

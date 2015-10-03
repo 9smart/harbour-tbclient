@@ -165,6 +165,6 @@ OTHER_FILES += \
 # to disable building translations every time, comment out the
 # following CONFIG line
 CONFIG += sailfishapp_i18n
-TRANSLATIONS += translations/harbour-tbclient-de.ts
-TRANSLATIONS += translations/harbour-tbclient-zh.ts
+TRANSLATIONS += translations/harbour-tbclient-de.ts \
+                translations/harbour-tbclient-zh.ts
 
