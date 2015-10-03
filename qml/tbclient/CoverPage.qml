@@ -37,7 +37,7 @@ CoverBackground {
     CoverActionList {
         id: coverAction
         CoverAction {
-            iconSource: "image://theme/icon-m-message"
+            iconSource: "image://theme/icon-cover-message"
             onTriggered: {
                 app.activate();
                 pageStack.push(Qt.resolvedUrl("Message/ReplyPage.qml"));
@@ -45,7 +45,7 @@ CoverBackground {
         }
 
         CoverAction {
-            iconSource: "gfx/icon-m-message.png"
+            iconSource: "gfx/icon-cover-message.png"
             onTriggered:{
                 app.activate();
                 pageStack.push(Qt.resolvedUrl("Message/AtmePage.qml"));

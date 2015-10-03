@@ -152,12 +152,16 @@ MyPage {
             Image {
                 id: img1
                 anchors.right:parent.right;
+                width:parent.width/2/2/2.5
+                height: width
                 anchors.verticalCenter: parent.verticalCenter;
                 source: "gfx/icon_ba.png"
             }
             Image {
                 id: img2
                 anchors.right:img1.left;
+                width:parent.width/2/2/2.5
+                height: width
                 anchors.verticalCenter: parent.verticalCenter;
                 source: "gfx/icon_tie.png"
             }
