@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import com.yeatse.tbclient 1.0
 import "../Component"
+import "../Base"
 import "../../js/main.js" as Script
 import "../../js/Utils.js" as Utils
 import "PostPage.js" as Post
@@ -48,7 +49,7 @@ MyPage {
         title: page.title;
         Button {
             anchors {
-                right: parent.left;
+                left: parent.left;
                 rightMargin: constant.paddingXLarge;
                 verticalCenter: parent.verticalCenter;
             }

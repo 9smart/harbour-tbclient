@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../../js/main.js" as Script
 import "../Component"
+import "../Base"
 
 MyPage {
     id: page;
@@ -321,7 +322,7 @@ MyPage {
                     color: Theme.rgba(Theme.highlightColor, 0.2)
                 }
                 TabButton{//Reverse-倒叙查看
-                    icon.source: "image://theme/icon-m-mobile-network";
+                    icon.source: "image://theme/icon-m-transfer";
                     text:qsTr("Reverse")
                     onClicked: {
                             currentTab.isLz = false;

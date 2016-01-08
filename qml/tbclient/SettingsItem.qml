@@ -1,5 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "Component"
+import "Base"
 
 Item {
     id: listItem
@@ -48,7 +50,7 @@ Item {
             Label {
                 id: mainText
                 text: listItem.title;
-                font.weight: listItem.titleWeight
+                //font.weight: listItem.titleWeight
                 font.pixelSize: listItem.titleSize
                 color: listItem.titleColor
             }

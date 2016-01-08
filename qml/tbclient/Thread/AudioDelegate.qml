@@ -1,22 +1,24 @@
 import QtQuick 2.0
+import "../Base"
 import "../../js/Utils.js" as Utils
 
 Item {
     id: root;
     height: constant.graphicSizeMedium;
 
-    property bool isLoading: text===audioWrapper.currentMd5 && audioWrapper.loading;
-    property bool isPlaying: text===audioWrapper.currentMd5 && audioWrapper.playing;
+    property bool isLoading: bheight==audioWrapper.currentMd5 && audioWrapper.loading;
+    property bool isPlaying: bheight==audioWrapper.currentMd5 && audioWrapper.playing;
 
-    BorderImage {
+    Rectangle {
         id: icon;
-        property string stateString: mouseArea.pressed ? "s" : "d";
         anchors.horizontalCenter: parent.horizontalCenter;
         height: parent.height;
         width: root.width / 2;
-        border { left: 20; top: 20; right: 20; bottom: 20; }
-        asynchronous: true;
-        source: "../gfx/btn_frs_video_"+stateString+constant.invertedString;
+        //border { left: 20; top: 20; right: 20; bottom: 20; }
+        radius:5;
+        border.width: 1;
+        border.color: "#428883";
+        color: isPlaying?"#88da251c":(mouseArea.pressed ? "#88000000" : "#88bbbbbb")
     }
 
     Image {
@@ -33,7 +35,7 @@ Item {
             right: icon.right; rightMargin: constant.paddingLarge*2;
             verticalCenter: parent.verticalCenter;
         }
-        text: Utils.milliSecondsToString(isPlaying?audioWrapper.position:format);
+        text: Utils.milliSecondsToString(isPlaying?(/*format-*/audioWrapper.position):format);
         font.pixelSize: constant.fontXSmall;
         color: isLoading ? constant.colorMid : constant.colorLight;
     }
@@ -42,6 +44,6 @@ Item {
         id: mouseArea;
         anchors.fill: icon;
         enabled: !isLoading;
-        onClicked: audioWrapper.playAudio(text);
+        onClicked: audioWrapper.playMp3Audio(bwidth,bheight);
     }
 }

@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import "../Component"
+import "../Base"
 import "../../js/main.js" as Script
 
 MyPage {
@@ -243,7 +244,7 @@ MyPage {
             visible: internal.forum && internal.forum.hasOwnProperty("name");
             onSignButtonClicked: internal.sign();
             onLikeButtonClicked: internal.like();
-            height: constant.paddingLarge*3+constant.fontSmall+constant.fontXXSmall+Theme.itemSizeSmall;
+            height: constant.paddingMedium*3+constant.fontMedium*2+constant.graphicSizeSmall;
         }
         delegate: ForumDelegate {
         }

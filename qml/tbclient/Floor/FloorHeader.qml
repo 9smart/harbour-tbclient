@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import "../Base"
 import "../../js/main.js" as Script
 
 Item {
@@ -88,10 +89,9 @@ Item {
             Row {
                 anchors.right: parent.right;
                 Image {
-                    width:constant.fontXXSmall+10;
-                    height:constant.fontXXSmall+3;
                     asynchronous: true;
-                    opacity:0.5;
+                    height:constant.fontXSmall;
+                    width:height*1.2;
                     source: "../gfx/btn_icon_comment_n"+constant.invertedString;
                 }
                 Text {

@@ -12,9 +12,9 @@ Name:       harbour-tbclient
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
-Summary:    tbclient
-Version:    0.4
-Release:    4
+Summary:    百度贴吧客户端
+Version:    0.5
+Release:    5
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/
@@ -66,6 +66,6 @@ desktop-file-install --delete-original       \
 %{_bindir}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/icons/hicolor/86x86/apps/%{name}.png
+%{_datadir}/icons/hicolor/*/apps/%{name}.png
 # >> files
 # << files

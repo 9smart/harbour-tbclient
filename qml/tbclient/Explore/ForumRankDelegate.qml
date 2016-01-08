@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import "../Component"
+import "../Base"
 
 AbstractItem {
     id: root;
@@ -26,7 +27,7 @@ AbstractItem {
             right: root.paddingItem.right;
             verticalCenter: parent.verticalCenter;
         }
-        source: "image://theme/icon-m-common-drilldown-arrow"+(theme.inverted?"-inverse":"");
+        source: "image://theme/icon-m-page-up"//+(theme.inverted?"-inverse":"");
     }
     Column {
         anchors {

@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../../js/main.js" as Script
 import "../Component"
+import "../Base"
 
 MyPage {
     id: page;
@@ -73,6 +74,12 @@ SilicaFlickable{
                        internal.getlist();
                    }
                }
+               MenuItem{
+                   text: internal.editMode ? qsTr("Edit Done") : qsTr("To Edit");
+                   onClicked: {
+                       internal.editMode = !internal.editMode;
+                   }
+               }
            }
     SilicaListView {
         id: view;
@@ -126,7 +133,8 @@ SilicaFlickable{
                     }
                     Image {
                         visible: isVisible;
-                        sourceSize.width:sourceSize.height*1.2;
+                        height:constant.fontXSmall;
+                        width:height*1.2;
                         source: "../gfx/btn_icon_comment_n"+constant.invertedString;
                     }
                     Text {

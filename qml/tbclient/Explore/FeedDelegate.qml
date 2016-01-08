@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import "../Component"
+import "../Base"
 
 AbstractDelegate {
     id: root;
@@ -100,6 +101,8 @@ AbstractDelegate {
         anchors { right: parent.right; bottom: parent.bottom; margins: 12 }
         Image {
             asynchronous: true;
+            height:constant.fontXSmall;
+            width:height*1.2;
             source: "../gfx/btn_icon_comment_n"+constant.invertedString;
         }
         Text {

@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../Base"
 
 Item {
     id: root
@@ -13,7 +14,7 @@ Item {
     property int indicatorStart: 25
     property int refreshStart: 120
 
-    property string pullDownMessage: isHeader ? qsTr("Pull down to activate") : qsTr("Pull up to activate");
+    property string pullDownMessage:""// isHeader ? qsTr("Pull down to activate") : qsTr("Pull up to activate");
     property string releaseRefreshMessage: qsTr("Release to activate");
     property string disabledMessage: qsTr("Now loading");
     property double lastUpdateTime: 0;

@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../Base"
 
 IconButton{
     id:root
@@ -13,6 +14,7 @@ IconButton{
             leftMargin: Theme.iconSizeMedium*3/2+Theme.paddingMedium*2;
             verticalCenter: parent.verticalCenter
         }
+        font.pixelSize: constant.fontXSmall;
         text:root.text
     }
 }

@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import "../Floor" as Floor
 import "../Component" as Comp
 import "../../js/main.js" as Script
+import "../Base"
 
 Item {
     id: root;

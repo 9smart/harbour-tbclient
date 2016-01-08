@@ -231,7 +231,7 @@ function getThreadPage(option, onSuccess, onFailed){
     var s = function(obj){
         //console.log("-------------"+JSON.stringify(obj))
         tbs = obj.anti.tbs;
-        var modelAffected = BaiduParser.loadThreadPage(option, obj.post_list||[]);
+        var modelAffected = BaiduParser.loadThreadPage(option, obj.post_list||[],obj.thread.id||0);
         onSuccess(obj, modelAffected);
     }
     req.sendRequest(s, onFailed);
@@ -340,7 +340,9 @@ function getFloorPage(option, onSuccess, onFailed){
         page.pageSize = obj.page.page_size;
         page.totalPage = obj.page.total_page;
         page.totalCount = obj.page.total_count||0;
-        BaiduParser.loadFloorPage(option, obj.subpost_list||[]);
+
+        //console.log("xxxxx----"+JSON.stringify(option));
+        BaiduParser.loadFloorPage(option, obj.subpost_list||[],option.kz);
         onSuccess();
     }
     req.sendRequest(s, onFailed);
@@ -607,6 +609,8 @@ function getForumFeed(option, onSuccess, onFailed){
         page.total = obj.total||0;
         page.hasMore = obj.has_more === "1";
         page.currentPage = option.pn;
+
+        //console.log(JSON.stringify(option))
         BaiduParser.loadForumFeed(option, obj.feed_thread_list||[]);
         onSuccess();
     }

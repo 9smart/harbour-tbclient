@@ -57,7 +57,8 @@ function post(vcode, vcodeMd5){
             opt.vcode_md5 = vcodeMd5;
         }
         if (tbsettings.signature !== "")
-            opt.content += "\n"+tbsettings.signature;
+            //2015.12.22,修改，小尾巴效果
+            opt.content += "\n　☞　\n"+tbsettings.signature;
         loading = true;
         s = function(){
                     tbsettings.draftBox = "";
@@ -91,7 +92,8 @@ function post(vcode, vcodeMd5){
             opt.vcode_md5 = vcodeMd5;
         }
         if (tbsettings.signature !== "")
-            opt.content += "\n"+tbsettings.signature;
+            //2015.12.22,修改，小尾巴效果
+            opt.content += "\n　☞　\n"+tbsettings.signature;
         loading = true;
         s = function(){
                     tbsettings.draftBox = "";

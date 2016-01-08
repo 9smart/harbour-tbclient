@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "Component"
+import "Base"
 
 MyPage {
     id: page;
@@ -173,6 +174,14 @@ MyPage {
                     MenuItem { text: "iPhone" }
                     MenuItem { text: "Android" }
                     MenuItem { text: "WindowsPhone" }
+                    MenuItem { text: "Windows8" }
+                    MenuItem { text: "PC" }
+                    MenuItem { text: "6" }
+                    MenuItem { text: "7" }
+                    MenuItem { text: "8" }
+                    MenuItem { text: "9" }
+                    MenuItem { text: "10" }
+                    MenuItem { text: "11" }
                 }
                 onCurrentIndexChanged: tbsettings.clientType = currentIndex + 1;
             }
@@ -182,6 +191,66 @@ MyPage {
                 color: constant.colorMarginLine;
             }
             Item { width: 1; height: constant.paddingLarge; }
+            //屏蔽发言Shielding speech
+            SettingsItem {
+                property variant remindDialog: null;
+                title: qsTr("Shielding speech");
+                subtitle: ".";
+
+                TextField {
+                    text: tbsettings.idList;
+                    width: parent.width;
+
+                    font.weight: Font.Light
+                    font.pixelSize: 22
+                    color: "#d2d2d2"
+                    anchors.verticalCenter: parent.bottom;
+                    placeholderText: qsTr("Enter the ID and split with ';'");
+                    onTextChanged: {
+                        tbsettings.idList=text
+                    }
+                }
+            }
+            SettingsItem {
+                title: qsTr("Only Thead");
+                Switch {
+                    id:switchOnlyThead
+                    anchors {
+                        right: parent.right; rightMargin: 18;
+                        verticalCenter: parent.verticalCenter;
+                    }
+                    checked: tbsettings.onlyThead;
+                    Component.onCompleted: {
+                        console.log(tbsettings.onlyThead )
+                        checkedChanged.connect(function(){tbsettings.onlyThead = checked;})
+                    }
+                    onCheckedChanged: {
+                        if(switchOnlyThead.checked==false){
+                            switchWithPost.checked=false;
+                        }
+                    }
+                }
+            }
+
+            SettingsItem {
+                title: qsTr("With Post");
+                Switch {
+                    id:switchWithPost
+                    anchors {
+                        right: parent.right; rightMargin: 18;
+                        verticalCenter: parent.verticalCenter;
+                    }
+                    checked: tbsettings.withPost;
+                    Component.onCompleted: {
+                        checkedChanged.connect(function(){tbsettings.withPost = checked;})
+                    }
+                    onCheckedChanged: {
+                        if(switchWithPost.checked){
+                            switchOnlyThead.checked=true
+                        }
+                    }
+                }
+            }
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter;
                 text: qsTr("Clear cache");

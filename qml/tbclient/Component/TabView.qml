@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../Base"
 Item {
     id: tabWidget
     default property alias content: stack.children //将tab页集合设置一个默认属性

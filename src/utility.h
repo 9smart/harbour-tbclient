@@ -8,8 +8,6 @@
 #include <QtQuick>
 #endif
 
-
-class Notification;
 class Utility : public QObject
 {
     Q_OBJECT
@@ -162,9 +160,6 @@ private:
 
     QHash<QString, QString> m_emo;
     QStringList m_emolist;
-#ifdef Q_OS_SAILFISH
-    Notification* notification;
-#endif
 };
 
 #endif // UTILITY_H

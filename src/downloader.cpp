@@ -1,4 +1,6 @@
 #include "downloader.h"
+#include<QFile>
+#include<QDebug>
 
 Downloader::Downloader(QObject *parent) :
     QObject(parent),
@@ -86,9 +88,12 @@ void Downloader::appendDownload(const QString &url, const QString &filename)
 {
     if (downloadQueue.isEmpty() && (mState == 0||mState == 4))
         QTimer::singleShot(0, this, SLOT(startNextDownload()));
-
-    downloadQueue.enqueue(QUrl::fromEncoded(url.toLocal8Bit()));
-    fileNameQueue.enqueue(filename);
+    if(QFile::exists(filename)){
+        //qDebug() << QFile::exists(filename);
+    }else{
+        downloadQueue.enqueue(QUrl::fromEncoded(url.toLocal8Bit()));
+        fileNameQueue.enqueue(filename);
+    }
 }
 
 void Downloader::abortDownload(const bool isAll)

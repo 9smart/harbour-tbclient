@@ -3,14 +3,20 @@ import Sailfish.Silica 1.0
 import com.yeatse.tbclient 1.0
 import QtQuick.LocalStorage 2.0
 import "Component"
+import "Base"
 import "../js/main.js" as Script
 import "../js/WorkerScript.js" as Worker
 
 ApplicationWindow {
     id: app;
-
+    property int allindex: 0
+    property int num:0
     initialPage: MainPage { id: mainPage; }
-
+    FontLoader{id:myfont;source: "font/yayuan.ttf"}
+//    FontLoader{id:myfont1;source: "font/DroidSansFallback.ttf"}
+//    FontLoader{id:myfont2;source: "font/SourceHanSans-Normal.otf"}
+//    FontLoader{id:myfont3;source: "font/DroidSansFallback-emoji.ttf"}
+//    FontLoader{id:myfont4;source: "font/youyuan.ttf"}
     TBSettings { id: tbsettings; }
 
     Constant { id: constant; }

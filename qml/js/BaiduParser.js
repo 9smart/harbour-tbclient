@@ -23,6 +23,7 @@ var BaiduParser = {
         var model = option.model;
         if (option.renew)
             model.clear();
+        //console.log(JSON.stringify(list))
         list.forEach(function(value){
                          var picUrl = "";
                          if (value.is_top !== "1"
@@ -63,7 +64,12 @@ var BaiduParser = {
                              reply_show: reply_show,
                              reply_num: value.reply_num
                          };
-                         model.append(prop);
+                         //console.log(prop.author+","+tbsettings.idList+","+tbsettings.onlyThead);
+                         if(tbsettings.onlyThead && cp(tbsettings.idList,prop.author)){
+                            //设置屏蔽
+                         }else{
+                            model.append(prop);
+                         }
                      });
     },
 
@@ -110,7 +116,7 @@ var BaiduParser = {
                             switch (value.type){
                             case "0": result += value.text||""; break;
                             case "1": result += value.link; break;
-                            case "2": result += value.c||value.text; break;
+                            case "2": result += "#("+(value.c||value.text)+")"; break;
                             case "3": result += value.big_cdn_src||value.src; break;
                             case "4":
                             case "5":
@@ -121,7 +127,8 @@ var BaiduParser = {
     },
 
     __parseThreadContent:
-    function(content){
+    function(content,s_tid,s_pid){
+        //console.log("xxxxx----"+JSON.stringify(content));
         /*
         input: content list, js array
         output: [ item1, item2, ... ]
@@ -142,6 +149,7 @@ var BaiduParser = {
         5 for video;
         9 for phone number;
         10 for audio;
+        11 for tail
         */
         var result = [];
         var maxRichLength = 500;
@@ -174,24 +182,53 @@ var BaiduParser = {
                 c.text = c.text||"";
                 if (l && l.type === "Text"){
                     if (l.format === 0){
-                        l.text += c.text;
+                        console.log("-------------Tail")
+                        if(c.text.indexOf("　☞　")>=0){
+                            var mtail=c.text.split("　☞　");
+                            if(mtail[0]!="") l.text += mtail[0];
+                            push("Tail",0,0,0,0);
+                            if(mtail[1]!="") push("Text", mtail[1], 0, 0, 0);
+                        }else{
+                            l.text += c.text;
+                        }
                         return;
                     }
                     if (l.text.length < maxRichLength && c.text.length < maxRichLength){
                         if (l.text.length + c.text.length < maxRichLength){
-                            l.text += c.text.replace(/\n/g, "<br/>");
+                            if(c.text.indexOf("　☞　")>=0){
+                                var mtail=c.text.split("　☞　");
+                                if(mtail[0]!="") l.text += mtail[0].replace(/\n/g, "<br/>");
+                                push("Tail",0,0,0,0);
+                                if(mtail[1]!="") push("Text", mtail[1].replace(/\n/g, "<br/>"), 0, 0, 0);
+                            }else{
+                                l.text += c.text.replace(/\n/g, "<br/>");
+                            }
                             return;
                         }
                         var sp = c.text.split("\n");
                         if (l.text.length + sp[0].length < maxRichLength){
                             l.text += sp.shift();
                             if (sp.length > 0)
-                                push("Text", sp.join("\n"), 0, 0, 0);
+                                if(sp.indexOf("　☞　")>=0){
+                                    var mtail=sp.split("　☞　");
+                                    if(mtail[0]!="") l.text += mtail[0].join("\n");
+                                    push("Tail",0,0,0,0);
+                                    if(mtail[1]!="") push("Text", mtail[1].join("\n"), 0, 0, 0);
+                                }else{
+                                    push("Text", sp.join("\n"), 0, 0, 0);
+                                }
                             return;
                         }
                     }
                 };
-                push("Text", c.text, 0, 0, 0);
+                if(c.text.indexOf("\n　☞　")>=0){
+                    var mtail=c.text.split("\n　☞　\n");
+                    if(mtail[0]!="") push("Text", mtail[0], 0, 0, 0);
+                    push("Tail",0,0,0,0);
+                    if(mtail[1]!="") push("Text", mtail[1], 0, 0, 0);
+                }else{
+                    push("Text", c.text, 0, 0, 0);
+                }
                 return;
             case "1":
                 //console.log("==link:"+c.link+"==,==text:"+c.text)
@@ -226,7 +263,11 @@ var BaiduParser = {
                     push("Text", c.text, 0, 0, 0);
                 return;
             case "10":
-                push("Audio", c.voice_md5, Number(c.during_time), 0, 0);
+                //console.log("xxxxx----"+JSON.stringify(c));
+                push("Audio", c.voice_md5, Number(c.during_time), Number(s_tid), Number(s_pid));
+                return;
+            case "11":
+                push("Tail",0,0,0,0);
                 return;
             }
         };
@@ -235,7 +276,7 @@ var BaiduParser = {
     },
 
     loadThreadPage:
-    function(option, list){
+    function(option, list, tid){
         var self = this;
         var modelAffected = 0;
         var model = option.model;
@@ -266,18 +307,25 @@ var BaiduParser = {
                              authorId: value.author.id,
                              authorLevel: value.author.level_id,
                              sub_post_number: value.sub_post_number,
-                             content: self.__parseThreadContent(value.content),
+                             content: self.__parseThreadContent(value.content,tid,value.id),
                              content_raw: self.__parseRawText(value.content)
                          };
-                         if (option.insert){
-                             if (option.arround)
-                                 model.insert(0, prop);
-                             else
-                                 model.insert(modelAffected, prop);
-                         } else {
-                             model.append(prop);
+                         //console.log(prop.authorName+","+tbsettings.idList+","+tbsettings.withPost);
+                         //console.log(JSON.stringify(prop));
+                         if(tbsettings.withPost && cp(tbsettings.idList,prop.authorName)){
+                            //设置屏蔽
+                         }else{
+                            if (option.insert){
+                                 if (option.arround)
+                                     model.insert(0, prop);
+                                 else
+                                     model.insert(modelAffected, prop);
+                             } else {
+                                 model.append(prop);
+                             }
+                             modelAffected ++;
                          }
-                         modelAffected ++;
+
                      });
         return modelAffected;
     },
@@ -397,11 +445,12 @@ var BaiduParser = {
     },
 
     loadFloorPage:
-    function(option, list){
+    function(option, list, tid){
         var self = this;
         var model = option.model;
         if (option.renew) model.clear();
         list.forEach(function(value){
+            //console.log(JSON.stringify(value))
                          var content = self.__parseFloorContent(value.content);
                          var time = Qt.formatDateTime(new Date(Number(value.time+"000")), "yyyy-MM-dd hh:mm:ss");
                          var voiceMd5 = "", voiceDuration = 0;
@@ -417,9 +466,16 @@ var BaiduParser = {
                              format: content[1],
                              time: time,
                              voiceMd5: voiceMd5,
+                             bwidth:tid,
+                             bheight:value.id,
                              voiceDuration: voiceDuration
                          }
-                         model.append(prop);
+                         //console.log(prop.authorName+","+tbsettings.idList+","+tbsettings.withPost);
+                         if(tbsettings.withPost && cp(tbsettings.idList,prop.author)){
+                            //设置屏蔽
+                         }else{
+                            model.append(prop);
+                         }
                      });
     },
 
@@ -495,9 +551,10 @@ var BaiduParser = {
     function (option, list){
         var model = option.model;
         if (option.renew) model.clear();
+        console.log(JSON.stringify(list))
         list.forEach(function(value){
-                         if (value.thread_type !== "8"&&value.thread_type !== "11")
-                             return;
+//                         if (value.thread_type !== "8"&&value.thread_type !== "11")
+//                             return;
                          var picUrl = "";
                          if (tbsettings.showImage && Array.isArray(value.media)){
                              value.media.some(function(media){
@@ -755,3 +812,13 @@ var BaiduParser = {
         return result;
     }
 };
+
+function cp(a,b){
+    var c=a.split(";");
+    for(var i=0;i<c.length;i++){
+        if(c[i]==b){
+            return true;
+        }
+    }
+    return false;
+}

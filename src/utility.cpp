@@ -30,23 +30,12 @@
 #include <MRemoteAction>
 #endif
 
-#ifdef Q_OS_SAILFISH
-#include <notification.h>
-#endif
-
 #include <QString>
 
 Utility::Utility(QObject *parent) :
     QObject(parent)
-#ifdef Q_OS_SAILFISH
-  , notification(new Notification(this))
-#endif
 {
     settings = new QSettings(this);
-
-    notification->setAppName(tr("tbclient"));
-    notification->setExpireTimeout(3000);
-    notification->setAppIcon("/usr/share/harbour-tbclient/qml/tbclient/gfx/icon-notice.png");
 }
 
 Utility::~Utility()
@@ -364,15 +353,6 @@ void Utility::showNotification(const QString &title, const QString &message)
     MRemoteAction action("com.tbclient", "/com/tbclient", "com.tbclient", "activateWindow");
     notification.setAction(action);
     notification.publish();
-#elif defined(Q_OS_SAILFISH)
-    //qDebug() << "showNotification:" << title << message<< notification->replacesId();
-    notification->setSummary(title);
-    notification->setBody(message);
-    notification->setPreviewSummary(title);
-    notification->setPreviewBody(message);
-    notification->publish();
-
-    //qDebug()<< notification->replacesId();
 #endif
 }
 
@@ -386,8 +366,6 @@ void Utility::clearNotifications()
         if (notification->eventType() == NOTIFICATION_EVENTTYPE)
             notification->remove();
     }
-#elif defined(Q_OS_SAILFISH)
-    notification->close();
 #endif
 }
 

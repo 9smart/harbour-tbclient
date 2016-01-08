@@ -8,9 +8,64 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Thu Sep 30 2015 BirdZhang <0312birdzhang@gmail.com> 0.4-4
-- 首页显示回复跟@数量
-- 更改消息查看页面
+* Mon Dec 22 2015 Chanxi <tianzhiyizu@gmail.com> 0.6-1
+- 增加小尾巴效果，有本软件发出的小尾巴在本软件内可以看到效果
+
+* Mon Nov 30 2015 Chanxi <tianzhiyizu@gmail.com> 0.5-9
+- 调整贴吧顶部的显示
+- ①称号跟经验值分行定宽
+- ②关注、签到按钮改成非图片显示，定宽，以适配高分辨率下的清晰显示以及适配系统主题
+- 添加“Base”文件夹，以便所有包含文字显示、输入的插件添加上内置字体显示
+- 所有QML文件添加“Base”文件夹引用
+
+* Sun Nov 22 2015 Chanxi <tianzhiyizu@gmail.com> 0.5-8
+- 调整数种字体的显示效果
+- 修改楼层复制中表情的内容，可直接粘帖到回复中发表显示表情
+
+* Thu Nov 12 2015 Chanxi <tianzhiyizu@gmail.com> 0.5-7
+- 修改贴吧版面的布局模式
+- ①调整标题、摘要、信息的字体大小颜色，达到视觉平衡效果
+- ②修改有图贴在版面上缩略图大小，适配多分辨率，并对这种贴的摘要行数做适配达到尽量不留空的效果
+
+* Wed Nov 11 2015 Chanxi <tianzhiyizu@gmail.com> 0.5-6
+- 增加字体TFF文件，暂定为“浪漫雅圆”
+
+* Tue Nov 10 2015 Chanxi <tianzhiyizu@gmail.com> 0.5-5
+- 更改“More”页面为“用户中心”
+- 更新用户中心界面为GridView模式
+- 新增SettingCell文件
+- 绘制每个项目的图标
+
+* Sat Nov 07 2015 Chanxi <tianzhiyizu@gmail.com> 0.5-4
+- 修改square中PathView为clip：true放在在pagestack操作时溢出本页
+- 修改post页中一个返回button定位在页面之外的bug（anchors right：page.left）
+
+* Thu Nov 05 2015 Chanxi <tianzhiyizu@gmail.com> 0.5-3
+- 增加启动splash
+- 改第一层级为三页效果“我的贴吧-用户中心（原more页）-广场”
+
+* Wed Nov 04 2015 Chanxi <tianzhiyizu@gmail.com> 0.5-2
+- 修改Cover界面
+
+* Tue Nov 03 2015 Chanxi <tianzhiyizu@gmail.com> 0.5-1
+- 修改众多图形资源适配sailfish
+- 更改第一层级布局方式
+
+* Mon Nov 02 2015 Chanxi <tianzhiyizu@gmail.com> 0.5-1
+- 增加用户屏蔽功能在 “更多-》设置”中设置屏蔽人的ID，多个ID用半角分号“;”分开
+- 关注的贴吧里增加编辑模式，可以取消关注
+- 修改“更多”页面的图片显示
+- 其他基础页面显示修复
+
+* Sun Nov 01 2015 Chanxi <tianzhiyizu@gmail.com> 0.4-5
+- 修改系统升级引起的图标混乱
+
+* Sun Oct 04 2015 BirdZhang <0312birdzhang@gmail.com> 0.4-4
+- 语音消息播放功能，录音缓存重启后会自动清理(by 蝉曦)
+- 调整了一些界面的多分辨率适配(by 蝉曦)
+- 调整了贴吧版面、贴内菜单的文字字号，看起来稍微不那么维和了一丁点(by 蝉曦)
+- 首页显示回复跟@数量(by BirdZhang)
+- 更改消息查看页面(by BirdZhang)
 
 * Mon Aug 03 2015 Chanxi <tianzhiyizu@gmail.com> 0.4-3
 - 修改贴内链接显示不全的bug

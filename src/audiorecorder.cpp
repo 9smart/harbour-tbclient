@@ -1,26 +1,22 @@
 #include "audiorecorder.h"
+#include<QFile>
+#include<QDebug>
 
 AudioRecorder::AudioRecorder(QObject *parent) :
     QObject(parent)
 {
-#ifdef Q_OS_SAILFISH
     captureSource = new QAudioRecorder;
     recorder = new QMediaRecorder(captureSource->mediaObject());
-#else
-    captureSource = new QAudioCaptureSource;
-    recorder = new QMediaRecorder(captureSource);
-#endif
 
-#ifdef Q_OS_HARMATTAN
-    audioSettings.setCodec("audio/AMR");
-#else
-    audioSettings.setCodec("AMR");
-#endif
-
-#ifndef Q_OS_SAILFISH
-    audioSettings.setQuality(QtMultimediaKit::HighQuality);
-#endif
+    audioSettings.setCodec("audio/amr");
+    audioSettings.setQuality(QMultimedia::HighQuality);
     recorder->setEncodingSettings(audioSettings);
+    //recorder->setOutputLocation(QUrl::fromLocalFile("/home/nemo/Pictures/save/tbclient/audio/test.amr"));
+
+    //qDebug() << QUrl::fromLocalFile("/home/nemo/Pictures/save/tbclient/audio/test.amr");
+    //qDebug() << recorder->outputLocation();
+    //recorder->record();
+
     connect(recorder, SIGNAL(error(QMediaRecorder::Error)), this, SIGNAL(errorChanged()));
     connect(recorder, SIGNAL(stateChanged(QMediaRecorder::State)), this, SIGNAL(stateChanged()));
     connect(recorder, SIGNAL(durationChanged(qint64)), this, SIGNAL(durationChanged()));
@@ -54,11 +50,7 @@ int AudioRecorder::duration() const
 
 void AudioRecorder::setOutputLocation(const QUrl &location)
 {
-#ifdef Q_OS_HARMATTAN
     recorder->setOutputLocation(QUrl(location.toString().remove("file://")));
-#else
-    recorder->setOutputLocation(location);
-#endif
     emit outputLocationChanged();
 }
 

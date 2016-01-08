@@ -1,11 +1,13 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "Base"
 
 QtObject {
     id: constant;
 
     // color
     property color colorLight: Theme.highlightColor//tbsettings.whiteTheme ? "#191919" : "#ffffff";
+    property color colorSecondaryLight: Theme.secondaryHighlightColor//tbsettings.whiteTheme ? "#191919" : "#ffffff";
     property color colorMid: Theme.primaryColor//tbsettings.whiteTheme ? "#505050" : "#d2d2d2";
     property color colorMarginLine: Theme.secondaryColor//tbsettings.whiteTheme ? "#a9a9a9" : "#444444";
     property color colorTextSelection: tbsettings.whiteTheme ? "#4591ff" : "#0072b2";
@@ -18,17 +20,17 @@ QtObject {
     property int paddingXLarge: 24;
 
     // graphic size
-    property int graphicSizeTiny: 32;
-    property int graphicSizeSmall: 48;
-    property int graphicSizeMedium: 64;
-    property int graphicSizeLarge: 80;
-    property int thumbnailSize: 120;
+    property int graphicSizeTiny: Theme.fontSizeExtraSmall/3*4//32;
+    property int graphicSizeSmall: Theme.fontSizeExtraSmall*2//48;
+    property int graphicSizeMedium: Theme.fontSizeMedium*2//64;
+    property int graphicSizeLarge: Theme.fontSizeLarge*2//80;
+    property int thumbnailSize: Theme.fontSizeLarge*3//120;
 
     // font size
-    property int fontXXSmall: Theme.fontSizeTiny;
+    property int fontXXSmall: Theme.fontSizeTiny;//20
     property int fontXSmall: Theme.fontSizeExtraSmall;
-    property int fontSmall: Theme.fontSizeSmall;
-    property int fontMedium: Theme.fontSizeMedium;
+    property int fontSmall: Theme.fontSizeSmall;//24
+    property int fontMedium: Theme.fontSizeMedium;//32
     property int fontLarge: Theme.fontSizeLarge;
     property int fontXLarge: Theme.fontSizeHuge;
     property int fontXXLarge: Theme.fontSizeExtraSmall;

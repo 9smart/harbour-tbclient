@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "Component"
 import "Thread"
+import "Base"
 import "../js/main.js" as Script
 
 MyPage {
@@ -13,7 +14,7 @@ MyPage {
     //loading: tabGroup.currentTab.loading;
 
 
-    ViewHeader {
+    PageHeader {
         id: viewHeader;
         title: page.title;
     }
@@ -24,9 +25,14 @@ MyPage {
         height: constant.graphicSizeLarge;
         SearchField {
             id: searchInput;
+            scale:0.8
+            transformOrigin :Item.Left
+            width:(Screen.width-searchBtn.width-constant.paddingLarge)*1.25
+            height:Theme.itemSizeSmall
+            //font.pixelSize: constant.fontSmall;
             anchors {
                 left: parent.left; leftMargin: constant.paddingLarge;
-                right: searchBtn.left; rightMargin: constant.paddingMedium;
+                //right: searchBtn.left; rightMargin: constant.paddingMedium;
                 verticalCenter: parent.verticalCenter;
             }
             placeholderText: qsTr("Tap to search");
@@ -74,10 +80,11 @@ MyPage {
         id: tabRow;
         anchors.top: searchItem.bottom;
         width: parent.width;
-        Button {
+        SearchButton {
             text: qsTr("Search tieba");
             width: parent.width/3;
-            color: tabGroup.current==0 ? constant.colorLight:constant.colorMid;
+            active: tabGroup.current==0 ? true : false
+            //color: tabGroup.current==0 ? constant.colorLight:constant.colorMid;
             onClicked: {
                 tabGroup.current=0;
                 if (searchInput.text == ""){
@@ -87,11 +94,12 @@ MyPage {
                 }
             }
         }
-        Button {
+        SearchButton {
             text: qsTr("Search posts");
             //tab: searchView;
             width: parent.width/3;
-            color: tabGroup.current==1 ? constant.colorLight:constant.colorMid;
+            active: tabGroup.current==1 ? true : false
+            //color: tabGroup.current==1 ? constant.colorLight:constant.colorMid;
             onClicked: {
                 tabGroup.current=1;
                 if (searchInput.text == "")
@@ -100,10 +108,10 @@ MyPage {
                     searchView.get();
             }
         }
-        Button {
+        SearchButton {
             text: qsTr("Search web");
             width: parent.width/3;
-            color:constant.colorMid;
+            //color:constant.colorMid;
             onClicked: {
                 var url = "http://m.baidu.com/"
                 if (searchInput.text.length > 0)
@@ -139,6 +147,8 @@ MyPage {
                 //subItemIndicator: true;
                 //platformInverted: tbsettings.whiteTheme;
                 Text {
+                    anchors.left: parent.left;
+                    anchors.leftMargin: Theme.paddingLarge
                     anchors.verticalCenter: parent.verticalCenter;
                     verticalAlignment: Text.AlignVCenter;
                     elide: Text.ElideRight;
@@ -149,7 +159,7 @@ MyPage {
                 onClicked: signalCenter.enterForum(modelData);
             }
         }
-        ListView {
+        SilicaListView {
             id: searchView;
             anchors.fill: parent;
             property string searchText;
@@ -196,7 +206,7 @@ MyPage {
                     AbstractItem {
                         id: root;
                         property bool fromSearch: true;
-                        implicitHeight: contentCol.height + constant.paddingLarge*2;
+                        implicitHeight: contentCol.height + constant.paddingMedium + constant.paddingSmall;
     //                    onClicked: {
     //                        signalCenter.createEnterThreadDialog(title, is_floor, pid, tid, fname, true);
     //                    }
@@ -212,6 +222,7 @@ MyPage {
                         }
                         onPressAndHold:{
                             contextMenu.show(myListItem);
+                            console.log(constant.fontXSmall)
                         }
                         Column {
                             id: contentCol;
@@ -223,9 +234,9 @@ MyPage {
                             Text {
                                 width: parent.width;
                                 wrapMode: Text.Wrap;
-                                text: content;
-                                color: constant.colorLight;
+                                text: title;
                                 font.pixelSize: constant.fontXSmall;
+                                color: constant.colorLight;
                                 textFormat: Text.PlainText;
                             }
                             Item {
@@ -236,12 +247,12 @@ MyPage {
                                     id: label;
                                     anchors {
                                         left: parent.left; leftMargin: constant.paddingMedium;
-                                        top: parent.top; topMargin: constant.paddingMedium;
+                                        top: parent.top; topMargin: constant.paddingSmall;
                                         right: parent.right; rightMargin: constant.paddingMedium;
                                     }
-                                    text: title;
-                                    font.pixelSize: constant.fontSmall;
-                                    color: constant.colorMid;
+                                    text: content;
+                                    color: constant.colorSecondaryLight;
+                                    font.pixelSize: constant.fontXSmall/24*20;
                                     wrapMode: Text.WrapAnywhere;
                                     elide: Text.ElideRight;
                                     maximumLineCount: 1;
@@ -253,13 +264,13 @@ MyPage {
                                 height: childrenRect.height;
                                 Text {
                                     font.pixelSize: constant.fontXXSmall;
-                                    color: constant.colorMid;
+                                    color: constant.colorMarginLine;
                                     text: fname + qsTr("Bar");
                                 }
                                 Text {
                                     anchors.right: parent.right;
                                     font.pixelSize: constant.fontXXSmall;
-                                    color: constant.colorMid;
+                                    color: constant.colorMarginLine;
                                     text: time;
                                 }
                             }

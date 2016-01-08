@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Component"
+import "../Base"
 import "../../js/main.js" as Script
 
 MyPage {
@@ -54,25 +55,21 @@ SilicaFlickable{
             }
         }
     }
-    PageHeader {
-        id: viewHeader;
-        Image {
-            anchors.centerIn: parent;
-            sourceSize.height: parent.height - constant.paddingSmall;
-            source: "../gfx/logo_teiba_top.png"
-        }
-    }
     SilicaListView {
         id: view;
-        anchors { fill: parent; topMargin: viewHeader.height; }
+        anchors { fill: parent;}
         cacheBuffer: height * 5;
         model: ListModel {}
         delegate: FeedDelegate {
         }
-//        header: PullToActivate {
-//            myView: view;
-//            onRefresh: internal.getlist();
-//        }
+        header:    PageHeader {
+            id: viewHeader;
+            Image {
+                anchors.centerIn: parent;
+                sourceSize.height: parent.height - constant.paddingSmall;
+                source: "../gfx/logo_teiba_top.png"
+            }
+        }
         footer: FooterItem {
             visible: view.count > 0;
             enabled: internal.hasMore && !loading;

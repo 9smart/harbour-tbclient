@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import "../Base"
 
 Item {
     id: root;
@@ -16,10 +17,10 @@ Item {
     Item {
         id: paddingItem;
         anchors {
-            left: parent.left; leftMargin: constant.paddingLarge;
-            right: parent.right; rightMargin: constant.paddingLarge;
-            top: parent.top; topMargin: constant.paddingLarge;
-            bottom: parent.bottom; bottomMargin: constant.paddingLarge;
+            left: parent.left; leftMargin: constant.paddingMedium;
+            right: parent.right; rightMargin: constant.paddingMedium;
+            top: parent.top; topMargin: constant.paddingMedium;
+            bottom: parent.bottom; bottomMargin: constant.paddingMedium;
         }
     }
 

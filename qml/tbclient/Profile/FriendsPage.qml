@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Component"
+import "../Base"
 import "../../js/main.js" as Script
 
 MyPage {
@@ -98,7 +99,7 @@ SilicaFlickable{
                     id:column
                     anchors {
                         left: avatar.right; leftMargin: constant.paddingMedium;
-                        right: chatBtn.left; rightMargin: constant.paddingMedium;
+                        right: root.right; rightMargin: constant.paddingMedium;
                         verticalCenter: parent.verticalCenter;
                     }
                     spacing: constant.paddingSmall;
@@ -119,23 +120,23 @@ SilicaFlickable{
                     }
                 }
 
-                Image {
-                    id: chatBtn;
-                    anchors {
-                        right: root.paddingItem.right;
-                        verticalCenter: parent.verticalCenter;
-                    }
-                    source: "image://theme/icon-m-toolbar-new-chat"+(theme.inverted?"-white":"");
-                    opacity: chatBtnMa.pressed ? 0.7 : 1;
-                    MouseArea {
-                        id: chatBtnMa;
-                        anchors.fill: parent;
-                        onClicked: {
-                            var prop = { chatName: name_show, chatId: model.id }
-                            pageStack.push(Qt.resolvedUrl("../Message/ChatPage.qml"), prop);
-                        }
-                    }
-                }
+//                Image {
+//                    id: chatBtn;
+//                    anchors {
+//                        right: root.paddingItem.right;
+//                        verticalCenter: parent.verticalCenter;
+//                    }
+//                    source: "image://theme/icon-m-toolbar-new-chat"+(theme.inverted?"-white":"");
+//                    opacity: chatBtnMa.pressed ? 0.7 : 1;
+//                    MouseArea {
+//                        id: chatBtnMa;
+//                        anchors.fill: parent;
+//                        onClicked: {
+//                            var prop = { chatName: name_show, chatId: model.id }
+//                            pageStack.push(Qt.resolvedUrl("../Message/ChatPage.qml"), prop);
+//                        }
+//                    }
+//                }
             }
         }
     }

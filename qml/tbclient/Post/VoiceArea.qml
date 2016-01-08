@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import com.yeatse.tbclient 1.0
+import "../Base"
 import "../../js/Utils.js" as Utils
 
 Item {
@@ -16,7 +17,9 @@ Item {
 
     Image {
         id: icon;
+        //anchors.centerIn: parent;
         anchors.centerIn: parent;
+        anchors.verticalCenterOffset: -Theme.fontSizeSmall
         width: constant.thumbnailSize;
         height: constant.thumbnailSize;
         sourceSize: Qt.size(width, height);
@@ -40,10 +43,13 @@ Item {
         anchors.fill: icon;
         onPressAndHold: {
             recorder.record();
+            console.log("***"+recorder.outputLocation)
         }
         onReleased: {
+            console.log("***"+recorder.duration+","+recorder.outputLocation)
             duration = recorder.duration;
             recorder.stop();
+            //audioUrl = recorder.outputLocation;
             if (duration > 1000){
                 audioUrl = recorder.outputLocation;
             } else {
@@ -61,8 +67,8 @@ Item {
         }
         font: constant.labelFont;
         color: constant.colorLight;
-        text: Utils.milliSecondsToString(time);
-        visible: recorder.state === AudioRecorder.RecordingState;
+        text: Utils.milliSecondsToString(time)+"0000000000";
+        visible: recorder.state == AudioRecorder.RecordingState;
     }
     Text {
         id: infoLabel;
@@ -72,7 +78,7 @@ Item {
         }
         font: constant.labelFont;
         color: constant.colorLight;
-        text: recorder.state === AudioRecorder.RecordingState ? qsTr("Release to finish recording")
+        text: recorder.state == AudioRecorder.RecordingState ? qsTr("Release to finish recording")
                                                               : qsTr("Long press to start recording");
     }
     states: [

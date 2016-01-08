@@ -28,8 +28,11 @@ function getPortrait(portrait){
     }
 }
 
-function getAudioUrl(md5){
+function getAudioUrl(md5){//amr
     return "http://c.tieba.baidu.com/c/p/voice?voice_md5="+md5;
+}
+function getMp3AudioUrl(tid,pid){//mp3
+    return "http://tieba.baidu.com/voice/index?tid="+tid+"&pid="+pid;
 }
 
 function milliSecondsToString(milliseconds) {

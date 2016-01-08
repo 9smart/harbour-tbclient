@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import com.yeatse.tbclient 1.0
+import "../Base"
 import "../../js/Utils.js" as Utils
 Item {
     id: root;
@@ -83,7 +84,10 @@ Item {
                 visible: imageList.length < 10;
                 IconButton {
                     width: height;
+                    height:100;
                     anchors.centerIn: parent;
+                    icon.width:constant.graphicSizeLarge;
+                    icon.height:constant.graphicSizeLarge;
                     icon.source: "../gfx/btn_pb_add_n.png"
                     onClicked: {
                         signalCenter.selectImage(root);

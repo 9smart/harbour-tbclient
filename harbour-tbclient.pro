@@ -14,11 +14,9 @@ TARGET = harbour-tbclient
 
 CONFIG += sailfishapp c++11
 
-
 DEFINES += Q_OS_SAILFISH
-QT += webkit multimedia sql dbus
 
-include(notifications/notification.pri)
+QT += webkit multimedia sql dbus
 
 HEADERS += \
     src/utility.h \
@@ -30,7 +28,7 @@ HEADERS += \
     src/dbusservice.h
 
 SOURCES += \
-    src/main.cpp \
+    src/harbour-tbclient.cpp \
     src/utility.cpp \
     src/tbnetworkaccessmanagerfactory.cpp \
     src/downloader.cpp \
@@ -160,11 +158,27 @@ OTHER_FILES += \
     qml/tbclient/Component/EnterThreadMenu.qml \
     qml/tbclient/Component/EnterThreadSearchMenu.qml \
     qml/tbclient/Component/HorizontalIconTextButton.qml \
-    qml/tbclient/Component/TabButton.qml
+    qml/tbclient/Component/TabButton.qml \
+    translations/harbour-tbclient-zh_HK.ts \
+    translations/harbour-tbclient-zh_TW.ts \
+    qml/tbclient/SettingCell.qml \
+    qml/tbclient/Component/SearchButton.qml \
+    qml/tbclient/Component/PageHeader.qml
+
+SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
 # to disable building translations every time, comment out the
 # following CONFIG line
 CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/harbour-tbclient-de.ts \
                 translations/harbour-tbclient-zh.ts
+
+DISTFILES += \
+    qml/tbclient/Base/PageHeader.qml \
+    qml/tbclient/Base/Label.qml \
+    qml/tbclient/Base/Text.qml \
+    qml/tbclient/Base/DetailItem.qml \
+    qml/tbclient/Base/TextField.qml \
+    qml/tbclient/Component/ForumHeaderButton.qml \
+    qml/tbclient/Thread/TailDelegate.qml
 

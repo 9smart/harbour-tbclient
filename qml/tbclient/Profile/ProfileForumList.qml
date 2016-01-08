@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Component"
+import "../Base"
 import "../../js/main.js" as Script
 
 MyPage {
@@ -61,6 +62,13 @@ MyPage {
                        text: qsTr("Refresh")
                        onClicked: {
                            getlist();
+                       }
+                   }
+                   MenuItem{
+                       visible: uid === tbsettings.currentUid;
+                       text: editMode ? qsTr("Edit Done") : qsTr("To Edit");
+                       onClicked: {
+                           page.editMode = !page.editMode;
                        }
                    }
                }

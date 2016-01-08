@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Component"
+import "../Base"
 import "../../js/main.js" as Script
 
 MyPage {
@@ -36,7 +37,7 @@ SilicaFlickable{
         MenuItem{
             text: qsTr("Refresh")
             onClicked: {
-                internal.getlist();
+                page.getlist();
             }
         }
     }
@@ -48,6 +49,7 @@ SilicaFlickable{
 
     SilicaFlickable {
         id: view;
+        clip: true
         visible: squareData != null;
         anchors { fill: parent; topMargin: viewHeader.height; }
         contentWidth: contentCol.width;
@@ -61,6 +63,7 @@ SilicaFlickable{
 //            }
             PathView {
                 id: banner;
+                clip: true
                 width: parent.width;
                 height: Math.floor(width / 3.3);
                 model: squareData ? squareData.banner : [];
@@ -136,7 +139,8 @@ SilicaFlickable{
                             }
                             verticalAlignment: Text.AlignVCenter;
                             elide: Text.ElideRight;
-                            font: constant.labelFont;
+                            //font: constant.labelFont;
+                            font.pixelSize: constant.fontXSmall;
                             color: constant.colorLight;
                             text: modelData.title;
                         }
@@ -303,6 +307,8 @@ SilicaFlickable{
                                 }
                                 Image {
                                     asynchronous: true;
+                                    height:constant.fontXSmall;
+                                    width:height*1.2;
                                     source: "../gfx/btn_icon_comment_n"+constant.invertedString;
                                 }
                                 Text {
@@ -332,6 +338,27 @@ SilicaFlickable{
             }
             Item { width: 1; height: constant.paddingMedium; }
         }
+    }
+}
+Row{
+    anchors.bottom: parent.bottom
+    Rectangle{
+        anchors.bottom: parent.bottom
+        color: "black"
+        width: Screen.width/3;
+        height: 2
+    }
+    Rectangle{
+        anchors.bottom: parent.bottom
+        color: "black"
+        width: Screen.width/3;
+        height: 2
+    }
+    Rectangle{
+        anchors.bottom: parent.bottom
+        color: Theme.highlightColor
+        width: Screen.width/3;
+        height: 2
     }
 }
     Component.onCompleted: getlist();

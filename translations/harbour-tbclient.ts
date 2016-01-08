@@ -105,6 +105,14 @@
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Edit Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatPage</name>
@@ -158,17 +166,6 @@
     <name>CopyDialog</name>
     <message>
         <source>Operation completed</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>CoverPage</name>
-    <message>
-        <source>At(s):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reply(es):</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -326,11 +323,11 @@
 <context>
     <name>ForumHeader</name>
     <message>
-        <source>Signed %1 days</source>
+        <source>members:&lt;b&gt;%1&lt;/b&gt; , posts:&lt;b&gt;%2&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>members:&lt;b&gt;%1&lt;/b&gt; , posts:&lt;b&gt;%2&lt;/b&gt;</source>
+        <source>%1 days</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -465,22 +462,6 @@
         <source>tbclient</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>fan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>bookmark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>reply</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>remind</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>LinkDecoder</name>
@@ -539,31 +520,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Home</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>BatchSign</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>More</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tap to search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>bar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>ReFresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Profile</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -589,10 +550,6 @@
 <context>
     <name>MorePage</name>
     <message>
-        <source>More</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation type="unfinished"></translation>
     </message>
@@ -614,6 +571,34 @@
     </message>
     <message>
         <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reply me</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At me</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BatchSign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collections</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -761,6 +746,14 @@
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Edit Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProfilePage</name>
@@ -822,14 +815,6 @@
 </context>
 <context>
     <name>PullToActivate</name>
-    <message>
-        <source>Pull down to activate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pull up to activate</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Release to activate</source>
         <translation type="unfinished"></translation>
@@ -1037,19 +1022,35 @@
         <source>User agent</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Only Thead</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>With Post</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shielding speech</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the ID and split with &apos;;&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SquarePage</name>
-    <message>
-        <source>Square</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Thread recommend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Square</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1321,10 +1322,6 @@
         <source>yrs</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>tbclient</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>VCodeDialog</name>
@@ -1340,10 +1337,6 @@
 <context>
     <name>VoiceArea</name>
     <message>
-        <source>Audio is too short to send out</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Release to finish recording</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1357,6 +1350,10 @@
     </message>
     <message>
         <source>Click to start playback</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio is too short to send out</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

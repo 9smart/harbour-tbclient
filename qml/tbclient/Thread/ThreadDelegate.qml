@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import "../Component"
+import "../Base"
 
 AbstractItem {
     id: root;
@@ -94,10 +95,9 @@ AbstractItem {
         }
         visible: floor !== "1";
         Image {
-            width:constant.fontXXSmall+10;
-            height:constant.fontXXSmall+3;
             asynchronous: true;
-            opacity:0.5;
+            height:constant.fontXSmall;
+            width:height*1.2;
             source: "../gfx/btn_icon_comment_n"+constant.invertedString;
         }
         Text {

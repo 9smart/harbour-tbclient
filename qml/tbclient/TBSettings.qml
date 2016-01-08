@@ -93,4 +93,14 @@ QtObject {
 
     property bool remindAtme: utility.getValue("remind/atme", true) == "true";
     onRemindAtmeChanged: utility.setValue("remind/atme", remindAtme);
+
+    //屏蔽
+    property string idList: utility.getValue("idList", "");
+    onIdListChanged: utility.setValue("idList",idList);
+    property bool onlyThead: utility.getValue("onlythead", false) == "true";
+    onOnlyTheadChanged: utility.setValue("onlythead", onlyThead);
+    property bool withPost: utility.getValue("withpost", false) == "true";
+    onWithPostChanged: utility.setValue("withpost", withPost);
+
+
 }

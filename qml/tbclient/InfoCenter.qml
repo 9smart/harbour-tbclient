@@ -1,7 +1,9 @@
 import QtQuick 2.0
+import Sailfish.Silica 1.0
 import com.yeatse.tbclient 1.0
-//import org.nemomobile.notifications 1.0
-import org.nemomobile.example 1.0
+import org.nemomobile.notifications 1.0
+import "Base"
+//import org.nemomobile.example 1.0
 import "../js/main.js" as Script
 
 Item {
@@ -69,26 +71,26 @@ Item {
             "arguments": [ "argument", 1 ]
         }]
 
-        onActionInvoked:{
-            console.log("clicked:"+actionKey)
-            app.activate();
+//        onActionInvoked:{
+//            console.log("clicked:"+actionKey)
+//            app.activate();
 
-            if(body.indexOf(qsTr("fan"))>=0){
-                console.log("open fan")
-            }
-//            if(body.indexOf(qsTr("pletter"))>=0){
-//                console.log("open pletter")
+//            if(body.indexOf(qsTr("fan"))>=0){
+//                console.log("open fan")
 //            }
-            if(body.indexOf(qsTr("bookmark"))>=0){
-                console.log("open bookmark")
-            }
-            if(body.indexOf(qsTr("reply"))>=0){
-                console.log("open reply")
-            }
-            if(body.indexOf(qsTr("remind"))>=0){
-                console.log("open remind")
-            }
-        }
+////            if(body.indexOf(qsTr("pletter"))>=0){
+////                console.log("open pletter")
+////            }
+//            if(body.indexOf(qsTr("bookmark"))>=0){
+//                console.log("open bookmark")
+//            }
+//            if(body.indexOf(qsTr("reply"))>=0){
+//                console.log("open reply")
+//            }
+//            if(body.indexOf(qsTr("remind"))>=0){
+//                console.log("open remind")
+//            }
+//        }
 
         function getNotification(replacesId){
             var notificationList = notifications("tbclient")
@@ -174,7 +176,6 @@ Item {
                 notification.showNotification(count, title, message);
             } else {
                 notification.clearNotifications();
-
 
 //                notification.previewBody = qsTr("Baidu Tieba");
 //                notification.previewSummary = "15237";

@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "Component"
 import "Profile"
+import "Base"
 import "../js/main.js" as Script
 
 MyPage {
@@ -143,7 +144,7 @@ MyPage {
                         wrapMode: Text.Wrap;
                         maximumLineCount: 1;
                         textFormat: Text.PlainText;
-                        font: constant.labelFont;
+                        font.pixelSize: constant.fontXSmall-4;
                         color: "white";
                         text: userData ? userData.intro : "";
                     }
@@ -195,12 +196,13 @@ MyPage {
                             height: 46;
                             enabled: userData != null && !loading;
                             onClicked: follow();
-//                            BorderImage {
-//                                id: icon;
-//                                anchors.fill: parent;
-//                                border { left: 25; right: 25; top: 0; bottom: 0; }
-//                                source: "gfx/btn_%1_%2%3".arg(parent.name).arg(parent.pressString).arg(constant.invertedString);
-//                            }
+                            BorderImage {
+                                id: icon;
+                                anchors.fill: parent;
+                                border { left: 25; right: 25; top: 0; bottom: 0; }
+                                opacity: 0.6
+                                source: "gfx/btn_%1_%2%3".arg(parent.name).arg(parent.pressString).arg(constant.invertedString);
+                            }
                             Text {
                                 visible: isLike;
                                 anchors.centerIn: parent;

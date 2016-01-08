@@ -53,7 +53,7 @@
     <name>BaiduParser</name>
     <message>
         <source>Click to watch video</source>
-        <translation>点击查看视频</translation>
+        <translation>点击观看视频</translation>
     </message>
 </context>
 <context>
@@ -104,6 +104,14 @@
     <message>
         <source>Refresh</source>
         <translation>刷新</translation>
+    </message>
+    <message>
+        <source>Edit Done</source>
+        <translation>完成编辑</translation>
+    </message>
+    <message>
+        <source>To Edit</source>
+        <translation>进入编辑</translation>
     </message>
 </context>
 <context>
@@ -159,17 +167,6 @@
     <message>
         <source>Operation completed</source>
         <translation>操作完成</translation>
-    </message>
-</context>
-<context>
-    <name>CoverPage</name>
-    <message>
-        <source>At(s):</source>
-        <translation>@ 我:</translation>
-    </message>
-    <message>
-        <source>Reply(es):</source>
-        <translation>回复:</translation>
     </message>
 </context>
 <context>
@@ -326,12 +323,12 @@
 <context>
     <name>ForumHeader</name>
     <message>
-        <source>Signed %1 days</source>
-        <translation>已签到%1天</translation>
-    </message>
-    <message>
         <source>members:&lt;b&gt;%1&lt;/b&gt; , posts:&lt;b&gt;%2&lt;/b&gt;</source>
         <translation>关注:&lt;b&gt;%1&lt;/b&gt; , 贴子:&lt;b&gt;%2&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>%1 days</source>
+        <translation>%1 天</translation>
     </message>
 </context>
 <context>
@@ -465,22 +462,6 @@
         <source>tbclient</source>
         <translation>贴吧客户端</translation>
     </message>
-    <message>
-        <source>fan</source>
-        <translation>粉丝</translation>
-    </message>
-    <message>
-        <source>bookmark</source>
-        <translation>收藏</translation>
-    </message>
-    <message>
-        <source>reply</source>
-        <translation>回复</translation>
-    </message>
-    <message>
-        <source>remind</source>
-        <translation>@ 我</translation>
-    </message>
 </context>
 <context>
     <name>LinkDecoder</name>
@@ -539,32 +520,12 @@
         <translation>我的贴吧</translation>
     </message>
     <message>
-        <source>Home</source>
-        <translation>主页</translation>
-    </message>
-    <message>
         <source>BatchSign</source>
         <translation>一键签到</translation>
     </message>
     <message>
-        <source>More</source>
-        <translation>更多</translation>
-    </message>
-    <message>
-        <source>Tap to search</source>
-        <translation>搜吧、搜贴</translation>
-    </message>
-    <message>
-        <source>bar</source>
-        <translation>吧</translation>
-    </message>
-    <message>
         <source>ReFresh</source>
         <translation>刷新</translation>
-    </message>
-    <message>
-        <source>Profile</source>
-        <translation>个人资料</translation>
     </message>
 </context>
 <context>
@@ -589,10 +550,6 @@
 <context>
     <name>MorePage</name>
     <message>
-        <source>More</source>
-        <translation>更多</translation>
-    </message>
-    <message>
         <source>Tabs</source>
         <translation>标签页</translation>
     </message>
@@ -615,6 +572,34 @@
     <message>
         <source>About</source>
         <translation>关于</translation>
+    </message>
+    <message>
+        <source>User Center</source>
+        <translation>用户中心</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation>主页</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>个人资料</translation>
+    </message>
+    <message>
+        <source>Reply me</source>
+        <translation>回复我的</translation>
+    </message>
+    <message>
+        <source>At me</source>
+        <translation>@ 我的</translation>
+    </message>
+    <message>
+        <source>BatchSign</source>
+        <translation>一键签到</translation>
+    </message>
+    <message>
+        <source>Collections</source>
+        <translation>我的收藏</translation>
     </message>
 </context>
 <context>
@@ -761,6 +746,14 @@
         <source>Refresh</source>
         <translation>刷新</translation>
     </message>
+    <message>
+        <source>Edit Done</source>
+        <translation>完成编辑</translation>
+    </message>
+    <message>
+        <source>To Edit</source>
+        <translation>进入编辑</translation>
+    </message>
 </context>
 <context>
     <name>ProfilePage</name>
@@ -822,14 +815,6 @@
 </context>
 <context>
     <name>PullToActivate</name>
-    <message>
-        <source>Pull down to activate</source>
-        <translation>下拉可以刷新</translation>
-    </message>
-    <message>
-        <source>Pull up to activate</source>
-        <translation>上拉可以刷新</translation>
-    </message>
     <message>
         <source>Release to activate</source>
         <translation>松开以后刷新</translation>
@@ -1037,13 +1022,25 @@
         <source>User agent</source>
         <translation>客户端识别码</translation>
     </message>
+    <message>
+        <source>Only Thead</source>
+        <translation>仅主题</translation>
+    </message>
+    <message>
+        <source>With Post</source>
+        <translation>包括回复</translation>
+    </message>
+    <message>
+        <source>Shielding speech</source>
+        <translation>屏蔽发言</translation>
+    </message>
+    <message>
+        <source>Enter the ID and split with &apos;;&apos;</source>
+        <translation>输入ID并使用&apos;;&apos;分隔他们</translation>
+    </message>
 </context>
 <context>
     <name>SquarePage</name>
-    <message>
-        <source>Square</source>
-        <translation>广场</translation>
-    </message>
     <message>
         <source>Thread recommend</source>
         <translation>精选推荐贴</translation>
@@ -1051,6 +1048,10 @@
     <message>
         <source>Refresh</source>
         <translation>刷新</translation>
+    </message>
+    <message>
+        <source>Square</source>
+        <translation>广场</translation>
     </message>
 </context>
 <context>
@@ -1321,10 +1322,6 @@
         <source>yrs</source>
         <translation>年</translation>
     </message>
-    <message>
-        <source>tbclient</source>
-        <translation>贴吧客户端</translation>
-    </message>
 </context>
 <context>
     <name>VCodeDialog</name>
@@ -1340,10 +1337,6 @@
 <context>
     <name>VoiceArea</name>
     <message>
-        <source>Audio is too short to send out</source>
-        <translation>语音时间太短</translation>
-    </message>
-    <message>
         <source>Release to finish recording</source>
         <translation>松开停止录音</translation>
     </message>
@@ -1358,6 +1351,10 @@
     <message>
         <source>Click to start playback</source>
         <translation>点击重放</translation>
+    </message>
+    <message>
+        <source>Audio is too short to send out</source>
+        <translation>声音太短，不能发送</translation>
     </message>
 </context>
 <context>

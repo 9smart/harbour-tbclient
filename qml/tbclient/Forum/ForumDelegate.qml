@@ -1,10 +1,11 @@
 import QtQuick 2.0
 import "../Component"
+import "../Base"
 
 AbstractItem {
     id: root;
     property string border : ""
-    implicitHeight: contentCol.height + constant.paddingLarge*2+16;
+    implicitHeight: contentCol.height + constant.paddingMedium*2 + constant.fontXSmall;
     onClicked: {
         var prop = { threadId: id, title: title };
         signalCenter.enterThread(prop);
@@ -17,17 +18,26 @@ AbstractItem {
             right: root.paddingItem.right;
             top: root.paddingItem.top;
         }
-        spacing: constant.paddingSmall;
+        spacing: constant.paddingMedium;
         Item {
             width: parent.width;
             height: childrenRect.height;
             Text {
-                
-                font.pixelSize: 18;
-                color: constant.colorMid;
-                text: author;
+                id:xtitle
+                anchors{
+                    left:parent.left;
+                    right:xsign.left;
+                }
+                color: constant.colorLight;
+                font.pixelSize: constant.fontXSmall;
+                wrapMode: Text.WrapAnywhere;
+                textFormat: Text.PlainText;
+                elide: Text.ElideRight;
+                maximumLineCount: 1;
+                text: title;
             }
             Row {
+                id:xsign
                 anchors.right: parent.right;
                 spacing: 4;
                 Image {
@@ -44,43 +54,31 @@ AbstractItem {
                 }
             }
         }
-        Text {
-            id:xtitle
-            width: parent.width;
-            text: title;
-            color: constant.colorLight;
-            //font.pixelSize: constant.fontXSmall;
-            font.pixelSize: constant.fontXSmall;
-            wrapMode: Text.WrapAnywhere;
-            textFormat: Text.PlainText;
-            elide: Text.ElideRight;
-            maximumLineCount: 1;
-        }
+
         Row {
             visible: tbsettings.showAbstract;
             anchors.horizontalCenter: parent.horizontalCenter;
-            opacity:0.8;
+            //opacity:0.8;
             Text {
                 width: contentCol.width - thumbnail.width;
-                visible: text != "";
-                anchors.verticalCenter: parent.verticalCenter;
+                //visible: text != "";
+                //anchors.verticalCenter: parent.verticalCenter;
                 text: model.abstract;
-                color: constant.colorMid;
-                font.pixelSize: constant.fontXXSmall
-                
+                color: constant.colorSecondaryLight//constant.colorMid;
+                font.pixelSize: constant.fontXSmall
+                lineHeight:1.2
                 wrapMode: Text.WrapAnywhere;
                 textFormat: Text.PlainText;
                 elide: Text.ElideRight;
-                maximumLineCount: 2;
-                //maximumLineCount: thumbnail.enabled ? 2 : 1;
+                //maximumLineCount: 2;
+                maximumLineCount: thumbnail.enabled ? Math.floor(constant.thumbnailSize/constant.fontXXSmall) : 2;
             }
             Image {
                 id: thumbnail;
                 asynchronous: true;
                 enabled: source != "";
                 visible: enabled;
-                //width: enabled ? constant.thumbnailSize : 0;
-                width: enabled ? 80 : 0;
+                width: enabled ? constant.thumbnailSize : 0;
                 height: width;
                 source: picUrl;
                 fillMode: Image.PreserveAspectCrop;
@@ -88,17 +86,23 @@ AbstractItem {
             }
         }
     }
+//    Text {
+
+//        font.pixelSize: 18;
+//        color: constant.colorMid;
+//        text: author;
+//    }
     Text {
         anchors {
             left: parent.left;
             bottom: parent.bottom;
             bottomMargin: constant.paddingMedium;
-            leftMargin: constant.paddingLarge
+            leftMargin: constant.paddingMedium
         }
-        text: reply_show;
-        font.pixelSize: constant.fontXXSmall-4;
+        text: "楼主: "+author+" / 最后回复: "+reply_show;
+        font.pixelSize: constant.fontXXSmall*0.8;
         
-        color: constant.colorMid
+        color: constant.colorMarginLine//constant.colorMid
     }
     Row {
         anchors {
@@ -107,16 +111,17 @@ AbstractItem {
             margins: constant.paddingMedium;
         }
         Image {
-            width:24;height:20;
+            anchors.verticalCenter: parent.verticalCenter;
             asynchronous: true;
-            opacity:0.5;
+            height:constant.fontXSmall;
+            width:height*1.2;
             source: "../gfx/btn_icon_comment_n"+constant.invertedString;
         }
         Text {
-            anchors.verticalCenter: parent.verticalCenter;
+            anchors.bottom: parent.bottom;
+            verticalAlignment: Text.AlignVCenter
             text: reply_num;
-            font.pixelSize: constant.fontXXSmall-4;
-            
+            font.pixelSize: constant.fontXXSmall/1.2;
             color: constant.colorMid
         }
     }

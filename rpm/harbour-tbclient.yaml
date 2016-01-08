@@ -1,7 +1,7 @@
 Name: harbour-tbclient
-Summary: tbclient
-Version: 0.4
-Release: 4
+Summary: 百度贴吧客户端
+Version: 0.5
+Release: 5
 # The contents of the Group field should be one of the groups listed here:
 # http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
 Group: Qt/Qt
@@ -39,7 +39,7 @@ Files:
   - '%{_bindir}'
   - '%{_datadir}/%{name}'
   - '%{_datadir}/applications/%{name}.desktop'
-  - '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
+  - '%{_datadir}/icons/hicolor/*/apps/%{name}.png'
 
 # For more information about yaml and what's supported in Sailfish OS
 # build system, please see https://wiki.merproject.org/wiki/Spectacle
