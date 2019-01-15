@@ -13,8 +13,8 @@ Name:       harbour-tbclient
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    百度贴吧客户端
-Version:    0.5
-Release:    5
+Version:    0.6
+Release:    2
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/

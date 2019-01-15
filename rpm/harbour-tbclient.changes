@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Tue Jan 15 2019 BirdZhang <0312birdzhang@gmail.com> 0.6-2
+- 修复登录
+
 * Mon Dec 22 2015 Chanxi <tianzhiyizu@gmail.com> 0.6-1
 - 增加小尾巴效果，有本软件发出的小尾巴在本软件内可以看到效果
 
