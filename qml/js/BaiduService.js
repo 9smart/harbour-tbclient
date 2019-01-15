@@ -120,9 +120,7 @@ BaiduRequest.prototype.signForm = function(param){
         }
 
 BaiduRequest.prototype.sendRequest = function(onSuccess, onFailed){
-            console.log("==============\n",
-                        this.method,
-                        this.action);
+            console.log("==============", this.method,this.action);
             // onSuccess(obj)
             // onFailed(message, [obj]);
             var xhr = new XMLHttpRequest();
@@ -133,16 +131,16 @@ BaiduRequest.prototype.sendRequest = function(onSuccess, onFailed){
                             if (xhr.status === 200){
                                 var obj = JSON.parse(xhr.responseText);
                                 if (obj.error_code !== "0"){
-                                    console.log("error one")
+                                    console.log("error one,",xhr.responseText)
                                     onFailed(obj.error_msg, obj);
                                 } else if (obj.error && obj.error.errno !== "0"){
-                                    console.log("error two")
+                                    console.log("error two,",xhr.responseText)
                                     onFailed(obj.error.usermsg, obj);
                                 } else {
                                     onSuccess(obj);
                                 }
                             } else {
-                                console.log("error other")
+                                console.log("error other,",xhr.responseText)
                                 onFailed(xhr.status);
                             }
                         }

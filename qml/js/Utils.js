@@ -22,7 +22,7 @@ function getBigImage(cdnpic){
 
 function getPortrait(portrait){
     if (portrait){
-        return "http://tb.himg.baidu.com/sys/portraitn/item/"+portrait;
+        return "https://himg.baidu.com/sys/portraitn/item/"+portrait;
     } else {
         return PHOTO_THUMBNAIL;
     }

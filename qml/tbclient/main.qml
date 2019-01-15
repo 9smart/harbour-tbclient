@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import com.yeatse.tbclient 1.0
 import QtQuick.LocalStorage 2.0
+import io.thp.pyotherside 1.5
 import "Component"
 import "Base"
 import "../js/main.js" as Script
@@ -53,6 +54,23 @@ ApplicationWindow {
 
     InfoBanner { id: infoBanner; }
 
+    Python {
+        id: py
+        Component.onCompleted: {
+            addImportPath(Qt.resolvedUrl('../python'))
+            py.importModule('app', function () {
+
+            })
+
+            setHandler('log', function(msg){
+                console.log(msg)
+            })
+
+            setHandler('error', function(msg){
+                signalCenter.showMessage(qsTr(msg))
+            })
+        }
+    }
     Component.onCompleted: {
         var msg = { "func": "initialize", "param": LocalStorage.openDatabaseSync};
         Worker.sendMessage(msg);

@@ -122,9 +122,13 @@ QtObject {
 
     // Pages
     function needAuthorization(forceLogin){
-        if(pageStack.currentPage.objectName !== "LoginPage"){
+        // if(pageStack.currentPage.objectName !== "LoginPage"){
+        //     var prop = { forceLogin: forceLogin||false }
+        //     pageStack.push(Qt.resolvedUrl("LoginPage.qml"), prop);
+        // }
+        if(pageStack.currentPage.objectName !== "WebLoginPage"){
             var prop = { forceLogin: forceLogin||false }
-            pageStack.push(Qt.resolvedUrl("LoginPage.qml"), prop);
+            pageStack.push(Qt.resolvedUrl("WebLoginPage.qml"), prop);
         }
     }
 

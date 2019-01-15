@@ -12,7 +12,7 @@
 # The name of your application
 TARGET = harbour-tbclient
 
-CONFIG += sailfishapp c++11
+CONFIG += sailfishapp c++11 webkit
 
 DEFINES += Q_OS_SAILFISH
 
@@ -62,6 +62,7 @@ OTHER_FILES += \
     qml/tbclient/ImageViewer.qml \
     qml/tbclient/InfoCenter.qml \
     qml/tbclient/LoginPage.qml \
+    qml/tbclient/WebLoginPage.qml \
     qml/tbclient/main.qml \
     qml/tbclient/MainPage.qml \
     qml/tbclient/MorePage.qml \

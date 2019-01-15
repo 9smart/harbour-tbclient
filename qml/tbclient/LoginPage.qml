@@ -100,6 +100,9 @@ MyPage {
                 width: parent.width;
                 placeholderText: qsTr("Tap to input");
                 inputMethodHints: phoneNumberCheck.checked ? Qt.ImhDialableCharactersOnly :Qt.ImhNoAutoUppercase;
+                EnterKey.enabled: text || inputMethodComposing
+                EnterKey.iconSource: "image://theme/icon-m-enter-next"
+                EnterKey.onClicked: pwField.focus = true
             }
 
             /*Flipable {
@@ -145,7 +148,7 @@ MyPage {
                 font.pixelSize: 22;
                 color: Theme.primaryColor;
             }
-            TextField {
+            PasswordField {
                 id: pwField;
                 width: parent.width;
                 enabled: !loading;
@@ -153,13 +156,11 @@ MyPage {
                 echoMode: TextInput.Password;
                 inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText;
                 //platformWesternNumericInputEnforced: true;
+                EnterKey.enabled: text
+                EnterKey.iconSource: "image://theme/icon-m-enter-close"
+                EnterKey.onClicked: parent.focus = true
             }
-            MyButton {
-                text: qsTr("Forget password?")
-                font.weight: Font.Light;
-                font.pixelSize: 22;
-                onClicked: Qt.openUrlExternally("https://passport.baidu.com/?getpass_index");
-            }
+
             Button {
                 id: loginBtn;
                 enabled: !loading
@@ -173,6 +174,14 @@ MyPage {
                 onClicked: login();
             }
             Item { width: 1; height: 1; }
+
+            MyButton {
+                text: qsTr("Forget password?")
+                font.weight: Font.Light;
+                font.pixelSize: 22;
+                onClicked: Qt.openUrlExternally("https://passport.baidu.com/?getpass_index");
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
             Text {
                 anchors.horizontalCenter: parent.horizontalCenter;
                 text: qsTr("Don't have a Baidu account?");

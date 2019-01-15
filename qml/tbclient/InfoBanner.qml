@@ -108,7 +108,7 @@ Item {
         animationHide.running = true;
     }
 
-    implicitHeight: internal.getBannerHeight()
+    implicitHeight: internal.getBannerHeight() * 1.2
     implicitWidth: internal.getBannerWidth()
     x:8; y:8
     scale: 0

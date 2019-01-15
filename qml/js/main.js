@@ -79,6 +79,7 @@ function login(option, onSuccess, onFailed){
         passwd: Qt.btoa(option.passwd),
         un: option.un
     }
+    console.log("param:",param)
     if (option.vcode){
         param.vcode = option.vcode;
         param.vcode_md5 = option.vcode_md5;
@@ -100,6 +101,21 @@ function login(option, onSuccess, onFailed){
         onSuccess();
     }
     req.sendRequest(s, onFailed);
+}
+
+
+function weblogin(user, onSuccess){
+    tbsettings.currentUid = user.id;
+    DBHelper.storeAuthData(user.id, user.name, user.BDUSS, user.passwd, user.avatar);
+    __name = user.name;
+    __bduss = user.BDUSS;
+    __portrait = user.avatar;
+    BaiduConst.BDUSS = user.BDUSS;
+    signalCenter.clearLocalCache();
+    // Required after changing/adding an account
+    BaiduRequest.intercomm();
+    signalCenter.userChanged();
+    onSuccess();
 }
 
 function getMessage(onSuccess, onFailed){
