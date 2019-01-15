@@ -57,10 +57,10 @@ QtObject {
     property bool whiteTheme: utility.getValue("whiteTheme", true) == "true";
     onWhiteThemeChanged: utility.setValue("whiteTheme", whiteTheme);
 
-    property bool showImage: utility.getValue("showImage", true) == "true";
+    property bool showImage: utility.getValue("showImage", true);
     onShowImageChanged: utility.setValue("showImage", showImage);
 
-    property bool showAbstract: utility.getValue("showAbstract", true) == "true";
+    property bool showAbstract: utility.getValue("showAbstract", true);
     onShowAbstractChanged: utility.setValue("showAbstract", showAbstract);
 
     property int maxTabCount: utility.getValue("maxTabCount", 4);

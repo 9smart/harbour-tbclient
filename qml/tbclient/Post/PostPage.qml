@@ -46,6 +46,7 @@ MyPage {
     PageHeader {
         id: viewHeader;
         //visible: app.inPortrait;
+        visible: false
         title: page.title;
         Button {
             anchors {
@@ -226,5 +227,14 @@ MyPage {
         } else if (status === PageStatus.Deactivating){
             //attachedArea.state = "";
         }
+    }
+
+    Component.onDestruction: {
+        tbsettings.draftBox = contentArea.text;
+        Post.uploadCanceled = true;
+        if (uploader.uploadState == HttpUploader.Loading){
+            uploader.abort();
+        }
+        imageUploader.abortUpload();
     }
 }

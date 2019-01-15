@@ -11,19 +11,19 @@ Item {
     property alias pressed: mouseArea.pressed
 
     property string title;
-    property int titleSize: 26
+    property int titleSize: constant.fontXSmall
     property int titleWeight: Font.Bold
     property color titleColor: "#ffffff" // theme.inverted ? "#ffffff" : "#282828"
 
     property string subtitle;
-    property int subtitleSize: 22
+    property int subtitleSize: constant.fontXXSmall
     property int subtitleWeight: Font.Light
     property color subtitleColor:"#d2d2d2"// theme.inverted ? "#d2d2d2" : "#505050"
 
     property string iconSource;
     property bool subItemIconVisible: false;
 
-    height: 88
+    height: Theme.itemSizeSmall
     width: parent.width
 
     Row {
@@ -33,7 +33,7 @@ Item {
             leftMargin: 18;
             rightMargin: 18;
         }
-        spacing: 18
+        spacing: Theme.paddingMedium
 
         Image {
             anchors.verticalCenter: parent.verticalCenter
