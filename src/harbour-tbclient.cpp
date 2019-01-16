@@ -82,7 +82,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 #else
     app->setApplicationName("harbour-tbclient");
     app->setOrganizationName("harbour-tbclient");
-    app->setApplicationVersion("0.5-1");
+    app->setApplicationVersion("0.6-3");
 #endif
 
     // Install translator for qt

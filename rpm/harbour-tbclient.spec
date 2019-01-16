@@ -14,7 +14,7 @@ Name:       harbour-tbclient
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    百度贴吧客户端
 Version:    0.6
-Release:    2
+Release:    3
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://example.org/
