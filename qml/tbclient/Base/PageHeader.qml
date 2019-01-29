@@ -43,7 +43,7 @@ Item {
         }
         font {
             pixelSize: Theme.fontSizeLarge
-            family: myfont.name
+//            family: myfont.name
         }
     }
     Item {

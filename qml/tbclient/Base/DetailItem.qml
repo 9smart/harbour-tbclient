@@ -24,7 +24,7 @@ Item {
         horizontalAlignment: Text.AlignRight
         color: Theme.secondaryHighlightColor
         font.pixelSize: Theme.fontSizeSmall
-        font.family: myfont.name
+//        font.family: myfont.name
         textFormat: Text.PlainText
         wrapMode: Text.Wrap
     }
@@ -42,7 +42,7 @@ Item {
         horizontalAlignment: Text.AlignLeft
         color: Theme.highlightColor
         font.pixelSize: Theme.fontSizeSmall
-        font.family: myfont.name
+//        font.family: myfont.name
         textFormat: Text.PlainText
         wrapMode: Text.Wrap
     }

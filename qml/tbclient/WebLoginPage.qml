@@ -20,9 +20,9 @@ MyPage {
           anchors.fill: parent
           url: 'https://wappass.baidu.com/passport'
 
-          header: PageHeader {
-              title: qsTr('Login')
-          }
+//          header: PageHeader {
+//              title: qsTr('Login')
+//          }
 
           onLoadingChanged: {
               if (loadRequest.status === WebView.LoadSucceededStatus){

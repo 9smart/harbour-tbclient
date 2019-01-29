@@ -13,7 +13,7 @@ ApplicationWindow {
     property int allindex: 0
     property int num:0
     initialPage: MainPage { id: mainPage; }
-    FontLoader{id:myfont;source: "font/yayuan.ttf"}
+//    FontLoader{id:myfont;source: "font/yayuan.ttf"}
 //    FontLoader{id:myfont1;source: "font/DroidSansFallback.ttf"}
 //    FontLoader{id:myfont2;source: "font/SourceHanSans-Normal.otf"}
 //    FontLoader{id:myfont3;source: "font/DroidSansFallback-emoji.ttf"}
