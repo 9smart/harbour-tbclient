@@ -1364,10 +1364,6 @@
         <translation type="unfinished">登录成功！</translation>
     </message>
     <message>
-        <source>Login</source>
-        <translation type="unfinished">登录</translation>
-    </message>
-    <message>
         <source>Could not login. Please try again.</source>
         <translation type="unfinished"></translation>
     </message>
