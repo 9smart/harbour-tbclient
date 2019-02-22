@@ -9,6 +9,7 @@ MyPage {
     id: root
     objectName: "WebLoginPage";
     backNavigation :false;
+    property alias userAgent: webview.userAgent
 
     function s(){
         loading = false;
@@ -19,11 +20,35 @@ MyPage {
           id: webview
           anchors.fill: parent
           url: 'https://wappass.baidu.com/passport'
+          overridePageStackNavigation: true
+          property string userAgent: "Mozilla/5.0 (Mobile Linux; U; like Android 4.4.3; Sailfish OS/2.0) AppleWebkit/535.19 (KHTML, like Gecko) Version/4.0 Mobile Safari/535.19"
+          property bool _isScrolledToEnd: (webview.contentY + webview.height + 2) >= webview.contentHeight
+          property bool _isScrolledToBeginning: webview.contentY <= 2
+          property bool _isFinishedPanning: webview.atXBeginning && webview.atXEnd && !webview.moving
+          experimental.temporaryCookies: true
+          experimental.deviceWidth: webview.width
+          experimental.deviceHeight: webview.height
+          experimental.userAgent: userAgent
+          anchors {
+            topMargin: -Theme.paddingLarge
+            top: root.top
+            bottom: root.bottom
+            left: root.left
+            right: root.right
+          }
+          experimental.customLayoutWidth: {
+            return root.width * Theme._webviewCustomLayoutWidthScalingFactor
+            // // VK's Terms Of Service page doesn't render the same
+            // // way as Facebook/Google/Twitter/OneDrive etc, because
+            // // it doesn't respect the deviceWidth setting.
+            // var urlStr = "" + url
+            // if (urlStr.indexOf("vk.com/terms") > 0) {
+            //     return root.width * Theme._webviewCustomLayoutWidthScalingFactor
+            // }
 
-//          header: PageHeader {
-//              title: qsTr('Login')
-//          }
-
+            // // For other services, zoom in a bit to make things more readable
+            // return root.width * 0.6
+        }
           onLoadingChanged: {
               if (loadRequest.status === WebView.LoadSucceededStatus){
                   console.log(loadRequest.url.toString())
