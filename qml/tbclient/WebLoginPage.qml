@@ -8,8 +8,9 @@ import "../js/main.js" as Script
 
 MyPage {
     id: root
+    property bool forceLogin: false;
     objectName: "WebLoginPage";
-    backNavigation :false;
+    backNavigation: false;
     property alias userAgent: webview.userAgent
 
     function s(){
