@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import QtWebKit.experimental 1.0
 import QtWebKit 3.0
 import "Component"
 import "Base"
@@ -52,7 +53,7 @@ MyPage {
           onLoadingChanged: {
               if (loadRequest.status === WebView.LoadSucceededStatus){
                   console.log(loadRequest.url.toString())
-                  if (loadRequest.url.toString().indexOf('wap.baidu.com/?uid') > 0){
+                  if (loadRequest.url.toString().indexOf('m.baidu.com/?uid') > 0){
                       webview.experimental.evaluateJavaScript(root.getUserInfoScript, function(rs){
                           if (rs && rs.name){
                               py.call('app.api.get_other_param', [rs.name], function(ret){
