@@ -54,7 +54,11 @@ MyPage {
           onLoadingChanged: {
               if (loadRequest.status === WebView.LoadSucceededStatus){
                   console.log(loadRequest.url.toString())
-                  if (loadRequest.url.toString().indexOf('m.baidu.com/?uid') > 0){
+                  // TODO
+                  // http://tieba.baidu.com/f/user/json_userinfo
+                  if (loadRequest.url.toString().indexOf('m.baidu.com/?uid') > 0 ||
+                          loadRequest.url.toString().indexOf('wap.baidu.com/?uid') > 0
+                          ){
                       webview.experimental.evaluateJavaScript(root.getUserInfoScript, function(rs){
                           if (rs && rs.name){
                               py.call('app.api.get_other_param', [rs.name], function(ret){
@@ -69,6 +73,13 @@ MyPage {
                               notification.error(qsTr("Could not login. Please try again."))
                               pageStack.pop()
                           }
+                      })
+                  }else{
+                      py.call('app.api.get_session_id_from_cookie', [], function(ret){
+                            // 获取到bduss，重定向到用户界面
+                            if(ret && webview.url != "https://m.baidu.com/?uid" ){
+                                webview.url = "https://m.baidu.com/?uid";
+                            }
                       })
                   }
               }

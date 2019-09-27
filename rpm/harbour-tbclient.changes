@@ -8,6 +8,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fri Sep 27 2019 BirdZhang <0312birdzhang@gmail.com> 0.6.2
+- 修复跳转到wap版登录问题
+
+* Fri Sep 23 2019 BirdZhang <0312birdzhang@gmail.com> 0.6.1
+- 修复登录问题
+
 * Tue Jan 15 2019 BirdZhang <0312birdzhang@gmail.com> 0.6-2
 - 修复登录
 
