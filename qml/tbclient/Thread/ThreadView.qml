@@ -353,7 +353,7 @@ MyPage {
                     icon.source: "image://theme/icon-m-computer"
                     text:qsTr("Open browser");
                     onClicked: {
-                        signalCenter.openBrowser("http://tieba.baidu.com/p/"+currentTab.threadId);
+                        signalCenter.openBrowser("https://tieba.baidu.com/p/"+currentTab.threadId);
                         toolbar.hideExbar();
                     }
                 }

@@ -30,7 +30,7 @@ function getQueryString(url,name) {
 function decodeLink(url){
     if(url.match(/checkurl\?url\=/g)){
         //console.log("...openBrowser:"+url)
-        url=url.replace("http://tieba.baidu.com/mo/q/checkurl?url=","");
+        url=url.replace("https://tieba.baidu.com/mo/q/checkurl?url=","");
         url=decodeURIComponent(url);
         url=url.substring(0,url.indexOf("&meta"))
         openBrowser(url);

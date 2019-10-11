@@ -116,7 +116,7 @@ MyPage {
                     id: avatarImage;
                     anchors { left: parent.paddingItem.left; top: parent.paddingItem.top; }
                     width: 110; height: 110;
-                    source: avatarUrl||(userData?"http://himg.baidu.com/sys/portraith/item/"+userData.portraith+"?t="+Date.now():"");
+                    source: avatarUrl||(userData?"https://himg.baidu.com/sys/portraith/item/"+userData.portraith+"?t="+Date.now():"");
                     asynchronous: true;
                     cache: false;
                 }

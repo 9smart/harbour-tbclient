@@ -55,7 +55,7 @@ Dialog {
             onLoadFinished: busyInd.visible = false;
             onLoadFailed: busyInd.visible = false;
             function setSource(){
-                var urlString = "http://c.tieba.baidu.com/c/f/anti/gridcaptcha";
+                var urlString = "https://c.tieba.baidu.com/c/f/anti/gridcaptcha";
                 urlString += "?version=5.4.2";
                 urlString += "&cuid="+Qt.md5(utility.imei)+"|"+utility.imei;
                 urlString += "&timestamp="+Date.now();

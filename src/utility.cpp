@@ -543,7 +543,7 @@ QString Utility::hasForumName(const QByteArray &link)
 
 QString Utility::fixUrl(const QString &url) const
 {
-    const QString prefix = "http://tieba.baidu.com/mo/q/checkurl";
+    const QString prefix = "https://tieba.baidu.com/mo/q/checkurl";
     if (url.startsWith(prefix)){
         QUrl temp(url);
 #if QT_VERSION<0x050000

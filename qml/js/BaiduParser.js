@@ -86,9 +86,9 @@ var BaiduParser = {
                          var height = Math.round(h/w*200);
                          var cover = "";
                          if (w > 180)
-                             cover = "http://imgsrc.baidu.com/forum/abpic/item/"+value.photo.id+".jpg";
+                             cover = "https://imgsrc.baidu.com/forum/abpic/item/"+value.photo.id+".jpg";
                          else
-                             cover = "http://imgsrc.baidu.com/forum/pic/item/"+value.photo.id+".jpg";
+                             cover = "https://imgsrc.baidu.com/forum/pic/item/"+value.photo.id+".jpg";
                          var prop = {
                              title: value.title,
                              tid: value.tid,

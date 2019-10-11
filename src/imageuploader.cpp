@@ -19,7 +19,7 @@ public:
 };
 
 const int ImageUploadData::CHUNK_SIZE = 51200;   // 50kb
-const char* ImageUploadData::UPLOAD_URL = "http://c.tieba.baidu.com/c/s/uploadPicture";
+const char* ImageUploadData::UPLOAD_URL = "https://c.tieba.baidu.com/c/s/uploadPicture";
 
 ImageUploader::ImageUploader(QObject *parent) :
     QObject(parent),

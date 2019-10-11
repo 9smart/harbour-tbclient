@@ -192,7 +192,7 @@ MyPage {
                 text: qsTr("Click to register");
                 font.weight: Font.Light;
                 font.pixelSize: 22;
-                onClicked: Qt.openUrlExternally("http://wappass.baidu.com/passport/reg");
+                onClicked: Qt.openUrlExternally("https://wappass.baidu.com/passport/reg");
             }
             TextSwitch {
                 id: phoneNumberCheck;

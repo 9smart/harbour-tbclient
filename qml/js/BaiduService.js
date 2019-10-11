@@ -1,6 +1,6 @@
 .pragma library
 
-var HOST = "http://c.tieba.baidu.com";
+var HOST = "https://c.tieba.baidu.com";
 
 var BaiduConst = {
     _client_type: 1,
@@ -17,7 +17,7 @@ var BaiduConst = {
 
 var BaiduApi = {
     TOKEN: "fb13bad79b3a1fefc0a5819a0b66eaa3e064a3bdf020f7f453a8ef905fd51aef",
-    INTERCOMM: "http://passport.baidu.com/v2/intercomm/statistic",
+    INTERCOMM: "https://passport.baidu.com/v2/intercomm/statistic",
 
     C_M_REGISTER: HOST + "/c/m/register",
     C_S_SYNC: HOST + "/c/s/sync",

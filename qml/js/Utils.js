@@ -4,9 +4,9 @@ var PHOTO_THUMBNAIL = Qt.resolvedUrl("../tbclient/gfx/photo.png");
 
 function getThumbnail(bigPic){
     if (bigPic.indexOf(".hiphotos.baidu.com") > 0){
-        return "http://imgsrc.baidu.com/forum/abpic/item/"+bigPic.split("/").pop();
-    } else if (bigPic.indexOf("http://imgsrc.baidu.com/forum/pic/item/") === 0){
-        return "http://imgsrc.baidu.com/forum/abpic/item/"+bigPic.substring(39);
+        return "https://imgsrc.baidu.com/forum/abpic/item/"+bigPic.split("/").pop();
+    } else if (bigPic.indexOf("https://imgsrc.baidu.com/forum/pic/item/") === 0){
+        return "https://imgsrc.baidu.com/forum/abpic/item/"+bigPic.substring(39);
     } else {
         return utility.percentDecode(bigPic);
     }
@@ -14,7 +14,7 @@ function getThumbnail(bigPic){
 
 function getBigImage(cdnpic){
     if (cdnpic.indexOf(".hiphotos.baidu.com") > 0){
-        return "http://imgsrc.baidu.com/forum/pic/item/"+cdnpic.split("/").pop();
+        return "https://imgsrc.baidu.com/forum/pic/item/"+cdnpic.split("/").pop();
     } else {
         return utility.percentDecode(cdnpic);
     }
@@ -29,10 +29,10 @@ function getPortrait(portrait){
 }
 
 function getAudioUrl(md5){//amr
-    return "http://c.tieba.baidu.com/c/p/voice?voice_md5="+md5;
+    return "https://c.tieba.baidu.com/c/p/voice?voice_md5="+md5;
 }
 function getMp3AudioUrl(tid,pid){//mp3
-    return "http://tieba.baidu.com/voice/index?tid="+tid+"&pid="+pid;
+    return "https://tieba.baidu.com/voice/index?tid="+tid+"&pid="+pid;
 }
 
 function milliSecondsToString(milliseconds) {

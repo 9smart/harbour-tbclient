@@ -9,7 +9,7 @@ MyPage {
     title: qsTr("User Center");
     function init(){
 //        var dict = [[qsTr("Tabs"),"folder-empty","signalCenter.enterThread()"],
-//                    [qsTr("Browser"),"browser","signalCenter.openBrowser(\"http://m.baidu.com\")"],
+//                    [qsTr("Browser"),"browser","signalCenter.openBrowser(\"https://m.baidu.com\")"],
 //                    [qsTr("Square"),"gallery","pageStack.push(Qt.resolvedUrl(\"Explore/SquarePage.qml\"))"],
 //                    [qsTr("Accounts"),"accounts","pageStack.push(Qt.resolvedUrl(\"AccountPage.qml\"))"],
 //                    [qsTr("Settings"),"settings","pageStack.push(Qt.resolvedUrl(\"SettingsPage.qml\"))"],
@@ -18,7 +18,7 @@ MyPage {
                     [qsTr("Home"),"gfx/icon-m-home.png","pageStack.push(Qt.resolvedUrl(\"Explore/FeedPage.qml\"))"],
                     [qsTr("Square"),"gfx/icon-m-square.png","pageStack.push(Qt.resolvedUrl(\"Explore/SquarePage.qml\"))"],
                     [qsTr("Tabs"),"gfx/icon-m-tabs.png","signalCenter.enterThread()"],
-                    [qsTr("Browser"),"image://theme/icon-m-region","signalCenter.openBrowser(\"http://m.baidu.com\")"],
+                    [qsTr("Browser"),"image://theme/icon-m-region","signalCenter.openBrowser(\"https://m.baidu.com\")"],
                     //帐号
                     [qsTr("Profile"),"gfx/icon-m-profile.png","pageStack.push(Qt.resolvedUrl(\"ProfilePage.qml\"), { uid: tbsettings.currentUid })"],
                     [qsTr("Accounts"),"gfx/icon-m-account.png","pageStack.push(Qt.resolvedUrl(\"AccountPage.qml\"))"],

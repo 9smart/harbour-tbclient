@@ -113,7 +113,7 @@ MyPage {
             width: parent.width/3;
             //color:constant.colorMid;
             onClicked: {
-                var url = "http://m.baidu.com/"
+                var url = "https://m.baidu.com/"
                 if (searchInput.text.length > 0)
                     url += "s?word="+searchInput.text;
                 signalCenter.openBrowser(url);

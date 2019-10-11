@@ -135,7 +135,7 @@ function F(a, c) {
 }
 
 function fetch(videoId) {
-    getJSONP("http://v.youku.com/player/getPlaylist/VideoIDS/" + videoId + "/Pf/4/ctype/12/ev/1?__callback=",
+    getJSONP("https://v.youku.com/player/getPlaylist/VideoIDS/" + videoId + "/Pf/4/ctype/12/ev/1?__callback=",
              function(res) {
                  var url;
                  var sid, fileid, k, ts, token, oip, ep;
@@ -155,7 +155,7 @@ function fetch(videoId) {
                      showStatusText("Error!");
                      return;
                  }
-                 url = "http://k.youku.com/player/getFlvPath/sid/" + sid;
+                 url = "https://k.youku.com/player/getFlvPath/sid/" + sid;
                  url += "_00/st/mp4/fileid/" + fileid;
                  url += "?K=" + k;
                  url += "&hd=1&myp=0";

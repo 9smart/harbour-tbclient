@@ -196,7 +196,7 @@ QtObject {
     }
 
     function viewImage(url,bh,bw){
-        url=url.replace("http://imgsrc.baidu.com/forum/abpic/","http://imgsrc.baidu.com/forum/pic/");
+        url=url.replace("https://imgsrc.baidu.com/forum/abpic/","https://imgsrc.baidu.com/forum/pic/");
         if (tbsettings.browser == ""){
             pageStack.push(Qt.resolvedUrl("ImageViewer.qml"), { imageUrl:url, bwidth:bw, bheight:bh})
         } else {

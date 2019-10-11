@@ -214,7 +214,7 @@ MyPage {
             MenuItem {
                 text: qsTr("Open browser");
                 enabled: menu.currentEnabled;
-                onClicked: signalCenter.openBrowser("http://tieba.baidu.com/p/"+currentTab.threadId);
+                onClicked: signalCenter.openBrowser("https://tieba.baidu.com/p/"+currentTab.threadId);
                 Button {
                     width: 0.4 * parent.width;
                     anchors {
@@ -224,7 +224,7 @@ MyPage {
                     text: qsTr("Copy url");
                     //flat: false;
                     onClicked: {
-                        utility.copyToClipbord("http://tieba.baidu.com/p/"+currentTab.threadId);
+                        utility.copyToClipbord("https://tieba.baidu.com/p/"+currentTab.threadId);
                         signalCenter.showMessage(qsTr("Success"));
                         menu.hide();
                     }

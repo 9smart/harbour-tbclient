@@ -1,10 +1,10 @@
 #include "tbnetworkaccessmanagerfactory.h"
 #include "utility.h"
 
-#define PORTRAIT_PREFIX "http://tb.himg.baidu.com/sys/portraitn/item/"
-#define IMG_PREFIX "http://imgsrc.baidu.com/forum/pic/item/"
-#define IMG_UNSUPPORTED_HOST "http://c.tieba.baidu.com/c/p/img"
-#define HOST_PREFIX "http://c.tieba.baidu.com/"
+#define PORTRAIT_PREFIX "https://tb.himg.baidu.com/sys/portraitn/item/"
+#define IMG_PREFIX "https://imgsrc.baidu.com/forum/pic/item/"
+#define IMG_UNSUPPORTED_HOST "https://c.tieba.baidu.com/c/p/img"
+#define HOST_PREFIX "https://c.tieba.baidu.com/"
 
 TBNetworkAccessManagerFactory::TBNetworkAccessManagerFactory() :
 #if(QT_VERSION<0x050000)
