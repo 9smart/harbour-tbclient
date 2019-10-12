@@ -7,7 +7,7 @@ QtObject {
     property string currentUid: utility.getValue("currentUid", "");
     onCurrentUidChanged: utility.setValue("currentUid", currentUid);
 
-    property int clientType: utility.getValue("clientType", 1);
+    property int clientType: 5;//utility.getValue("clientType", 1);
     onClientTypeChanged: utility.setValue("clientType", clientType);
 
     property string clientId: utility.getValue("clientId", "0");

@@ -169,21 +169,21 @@ MyPage {
             ComboBox {
                 id:clientTypeSelector
                 label: qsTr("User agent");
-                currentIndex:tbsettings.clientType-1
+                currentIndex: 0//tbsettings.clientType-1
                 menu: ContextMenu {
-                    MenuItem { text: "iPhone" }
-//                    MenuItem { text: "Android" }
-//                    MenuItem { text: "WindowsPhone" }
-//                    MenuItem { text: "Windows8" }
-//                    MenuItem { text: "PC" }
-//                    MenuItem { text: "6" }
-//                    MenuItem { text: "7" }
-//                    MenuItem { text: "8" }
-//                    MenuItem { text: "9" }
-//                    MenuItem { text: "10" }
-//                    MenuItem { text: "11" }
+                    // MenuItem { text: "iPhone" }
+                    // MenuItem { text: "Android" }
+                    // MenuItem { text: "WindowsPhone" }
+                    // MenuItem { text: "Windows8" }
+                    MenuItem { text: "PC" }
+                    // MenuItem { text: "6" }
+                    // MenuItem { text: "7" }
+                    // MenuItem { text: "8" }
+                    // MenuItem { text: "9" }
+                    // MenuItem { text: "10" }
+                    // MenuItem { text: "11" }
                 }
-                onCurrentIndexChanged: tbsettings.clientType = currentIndex + 1;
+                // onCurrentIndexChanged: tbsettings.clientType = currentIndex + 1;
             }
             Rectangle {
                 anchors { left: parent.left; right: parent.right; margins: constant.paddingXLarge; }
