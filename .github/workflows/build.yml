@@ -4,6 +4,12 @@
 
 name: Build Tbclient
 
+on:
+  push:
+    tags:
+      - '*'
+    branches:
+      - master
 env:
   RELEASE: 4.1.0.23
 
