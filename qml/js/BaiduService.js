@@ -12,7 +12,7 @@ var BaiduConst = {
     _timestamp: 0,
     _phone_imei: "",
     _client_id: "0",
-    _client_version: "5.1.3"
+    _client_version: "6.2.2"
 }
 
 var BaiduApi = {
