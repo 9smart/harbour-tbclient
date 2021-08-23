@@ -2,15 +2,7 @@
 ## Copy from https://github.com/CODeRUS/screencast
 ## Thanks CODeRUS
 
-name: SouniaoIME
-
-on:
-  push:
-    tags:
-      - '*'
-  pull_request:
-    branches:
-      - master
+name: Build Tbclient
 
 env:
   RELEASE: 4.1.0.23
