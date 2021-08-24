@@ -164,7 +164,7 @@ Item {
                     if (tabContainer.state != "") {
                         if (tabContainer.children[0].status != undefined) {
                             incomingPage = tabContainer.children[0]
-                            incomingPage.status = PageStatus.Activating // triggers the orientation change
+                            // incomingPage.status = PageStatus.Activating // triggers the orientation change
                             incomingPage.visible = true
                             if (incomingPage == outgoingPage)
                                 outgoingPage = null
