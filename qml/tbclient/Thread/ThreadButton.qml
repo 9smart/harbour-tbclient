@@ -36,7 +36,7 @@ Item {
             return next
         }
         function getMask(){
-            if (tab.loading)
+            if (tab.loading||false)
                 return busyIndicator;
             if (sectionMouseArea.pressed)
                 return pressingIndicator;

@@ -93,14 +93,14 @@ Item {
             function incomingDone() {
                 state = ""
                 if (priv.incomingPage) {
-                    priv.incomingPage.status = PageStatus.Active
+                    // priv.incomingPage.status = PageStatus.Active
                     priv.incomingPage = null
                 }
             }
 
             function outgoingDone() {
                 if (priv.outgoingPage) {
-                    priv.outgoingPage.status = PageStatus.Inactive
+                    // priv.outgoingPage.status = PageStatus.Inactive
                     priv.outgoingPage.visible = false
                     priv.outgoingPage = null
                 }
@@ -178,7 +178,7 @@ Item {
                     if (tabContainer.state != "Hidden") {
                         if (tabContainer.children.length > 0 && tabContainer.children[0].status != undefined) {
                             outgoingPage = tabContainer.children[0]
-                            outgoingPage.status = PageStatus.Deactivating
+                            // outgoingPage.status = PageStatus.Deactivating
                             if (incomingPage == outgoingPage)
                                 incomingPage = null
                         }
