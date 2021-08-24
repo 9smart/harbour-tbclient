@@ -53,7 +53,8 @@ MyPage {
         }
           onLoadingChanged: {
               if (loadRequest.status === WebView.LoadSucceededStatus){
-                  console.log(loadRequest.url.toString())
+                  console.log(loadRequest.url.toString());
+                  webview.experimental.evaluateJavaScript(root.setAgree, function(rs){});
                   // TODO
                   // http://tieba.baidu.com/f/user/json_userinfo
                   if (loadRequest.url.toString().indexOf('m.baidu.com/?uid') > 0 ||
@@ -92,6 +93,10 @@ var avatar = document.getElementsByClassName('head-icon')[0].src;
 avatar = avatar.split('/')[1]
 var res = {avatar: avatar, name: userName};
 return res;
+})()";
+
+  property string setAgree: "(function(){
+  document.getElementsByClassName('not-agree-icon')[0].click();
 })()"
 
 }
